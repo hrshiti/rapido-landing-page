@@ -13,11 +13,12 @@ import CaptainFeatureImg from '../assets/img5.jpg';
 
 function Safety() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
         <div className="font-sans text-gray-800 bg-white">
             {/* Header - Consistent with other pages but Safety active */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50">
                 <div className="flex items-center">
                     {/* Logo Image */}
                     <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
@@ -38,10 +39,37 @@ function Safety() {
                     Download App
                 </button>
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
 
             {/* Sub-Navigation */}
             <div className="bg-white border-b border-gray-100">
@@ -53,11 +81,11 @@ function Safety() {
             </div>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-center gap-16">
+            <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
                 {/* Text Section */}
                 <div className="md:w-1/2 z-10">
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-black leading-tight">
+                    <h1 className="text-3xl md:text-6xl font-extrabold mb-8 text-black leading-tight">
                         Safety for all.
                     </h1>
 
@@ -67,7 +95,7 @@ function Safety() {
                 </div>
 
                 {/* Image Collage Section */}
-                <div className="md:w-1/2 relative h-[500px] w-full">
+                <div className="md:w-1/2 relative h-[350px] md:h-[500px] w-full">
 
                     {/* Image 1: Captain (Left Center) */}
                     <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-64 h-80 z-20 hover:scale-105 transition-transform duration-300">
@@ -100,16 +128,16 @@ function Safety() {
             </main>
 
             {/* Covers Everyone Section */}
-            <section className="py-24 bg-white">
+            <section className="py-12 md:py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-16 text-black">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-16 text-black">
                         Covers Everyone
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         {/* Card 1: For Customers */}
                         <div className="bg-white rounded-3xl p-0"> {/* Removed padding/shadow if purely image based top, but assuming card style */}
-                            <div className="rounded-[2.5rem] overflow-hidden mb-8 h-[500px] w-full bg-gray-100">
+                            <div className="rounded-[2.5rem] overflow-hidden mb-8 h-[300px] md:h-[500px] w-full bg-gray-100">
                                 <img src={CustomerAppImg} alt="Customer using app" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="text-3xl font-bold text-black mb-4">For Customers</h3>
@@ -121,7 +149,7 @@ function Safety() {
 
                         {/* Card 2: For Captains */}
                         <div className="bg-white rounded-3xl p-0">
-                            <div className="rounded-[2.5rem] overflow-hidden mb-8 h-[500px] w-full bg-gray-100">
+                            <div className="rounded-[2.5rem] overflow-hidden mb-8 h-[300px] md:h-[500px] w-full bg-gray-100">
                                 <img src={CaptainFeatureImg} alt="Captain riding" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="text-3xl font-bold text-black mb-4">For Captains</h3>
@@ -135,9 +163,9 @@ function Safety() {
             </section>
 
             {/* Safety Measures Section */}
-            <section className="bg-[#F9D423] py-24 text-black">
+            <section className="bg-[#F9D423] py-12 md:py-24 text-black">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
                         {/* Top Left: Main Header */}
                         <div>
                             <div className="mb-6">
@@ -147,7 +175,7 @@ function Safety() {
                                     <path d="M12 15V7" />
                                 </svg>
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+                            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-8">
                                 Measures to ensure the well-being of both, our Captains and Customers.
                             </h2>
                         </div>
@@ -196,9 +224,9 @@ function Safety() {
             </section>
 
             {/* Way Forward Section */}
-            <section className="py-24 bg-white">
+            <section className="py-12 md:py-24 bg-white">
                 <div className="max-w-4xl mx-auto px-6 text-center md:text-left">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">
                         Way forward on Safety
                     </h2>
                     <p className="text-lg text-gray-600 mb-8 leading-relaxed">

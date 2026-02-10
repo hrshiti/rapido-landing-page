@@ -12,6 +12,7 @@ import CareersImg5 from '../assets/img5.jpg';
 
 const Careers = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Testimonial Data
     const testimonials = [
@@ -37,7 +38,7 @@ const Careers = () => {
     return (
         <div className="font-sans text-gray-800 bg-white min-h-screen relative overflow-x-hidden">
             {/* Header */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
                 <div className="flex items-center">
                     <img src={Logo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
@@ -56,16 +57,43 @@ const Careers = () => {
                         Download App
                     </button>
                 </nav>
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
 
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="text-black border-b-2 border-yellow-400 pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
+
             {/* Hero Section */}
-            <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col md:flex-row items-center relative z-10">
+            <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16 flex flex-col md:flex-row items-center relative z-10">
                 {/* Left Content */}
                 <div className="md:w-5/12 text-left z-20">
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-black tracking-tight">
+                    <h1 className="text-3xl md:text-6xl font-extrabold mb-6 text-black tracking-tight">
                         Be a part of our team.
                     </h1>
                     <p className="text-lg text-gray-500 mb-10 leading-relaxed font-normal">
@@ -77,7 +105,7 @@ const Careers = () => {
                 </div>
 
                 {/* Right Visuals - Collage */}
-                <div className="md:w-7/12 relative mt-16 md:mt-0 h-[600px] w-full flex justify-center items-center">
+                <div className="md:w-7/12 relative mt-16 md:mt-0 h-[400px] md:h-[600px] w-full flex justify-center items-center">
                     {/* Background blob */}
                     <div className="absolute top-0 right-[-100px] w-[800px] h-[700px] bg-[#FFFBEB] rounded-[40%] transform -rotate-12 -z-10"></div>
 
@@ -105,9 +133,9 @@ const Careers = () => {
             </main>
 
             {/* Why work with us */}
-            <section className="bg-white py-16">
+            <section className="bg-white py-10 md:py-16">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <h2 className="text-3xl font-bold mb-16 text-black">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-16 text-black">
                         Why work with us
                         <div className="h-1 w-16 mt-2 rounded-full" style={{ backgroundColor: '#FFE755' }}></div>
                     </h2>
@@ -153,7 +181,7 @@ const Careers = () => {
             </section>
 
             {/* Gallery Section */}
-            <section className="bg-white py-12 mb-20">
+            <section className="bg-white py-10 mb-10 md:mb-20">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {officeImages.map((img, idx) => (
@@ -171,7 +199,7 @@ const Careers = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="bg-gray-50 py-24 relative overflow-hidden">
+            <section className="bg-gray-50 py-12 md:py-24 relative overflow-hidden">
                 {/* Dot Pattern 1 */}
                 <div className="absolute top-10 left-10 md:left-40 z-0 opacity-20">
                     <div className="grid grid-cols-8 gap-2">

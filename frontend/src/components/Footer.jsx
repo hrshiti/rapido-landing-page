@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -44,10 +45,13 @@ const Footer = () => {
                     {/* Column 3: Navigation */}
                     <div>
                         <ul className="space-y-3 text-gray-400">
-                            <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="/safety" className="hover:text-white transition-colors">Safety</a></li>
-                            <li><a href="/careers" className="hover:text-white transition-colors">Careers</a></li>
+                            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                            <li><Link to="/safety" className="hover:text-white transition-colors">Safety</Link></li>
+                            <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                            <li><Link to="/press" className="hover:text-white transition-colors">Press</Link></li>
+                            <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                             <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
                         </ul>
                     </div>
@@ -68,8 +72,6 @@ const Footer = () => {
                             <li className="font-bold text-white mb-2 block md:hidden">Captain Terms</li>
                             <li><a href="#" className="hover:text-white transition-colors">Captain Terms - Bike Taxi</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Captain Terms - Cabs and Auto</a></li>
-                            <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="/press" className="hover:text-white transition-colors">Press</a></li>
                         </ul>
 
                         <h4 className="font-bold mb-4 text-white uppercase tracking-wider text-sm">Follow Us</h4>

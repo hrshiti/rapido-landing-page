@@ -22,6 +22,7 @@ import SafetyImg from '../assets/img3.jpeg'; // Renamed back to SafetyImg to mat
 
 function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [pickup, setPickup] = useState('');
     const [drop, setDrop] = useState('');
 
@@ -37,7 +38,7 @@ function Home() {
     return (
         <div className="font-sans text-gray-800">
             {/* Header */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
                 <div className="flex items-center">
                     <img src={Logo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
@@ -57,10 +58,37 @@ function Home() {
                     </button>
                 </nav>
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="#" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Genzo Ads</a>
+                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
 
             {/* Hero Section */}
             <section className="relative flex flex-col pt-16 items-center bg-gray-50 overflow-hidden" style={{ minHeight: '80vh' }}>
@@ -111,9 +139,9 @@ function Home() {
             </section>
 
             {/* Services Section */}
-            <section className="py-20 bg-white relative">
+            <section className="py-10 md:py-20 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-16 text-gray-900 leading-tight">
                         Our Services
                         {/* Yellow Underline */}
                         <div className="h-2 w-16 mt-2" style={{ backgroundColor: '#FFE755' }}></div>
@@ -134,11 +162,11 @@ function Home() {
             </section>
 
             {/* Info Section 1: Quick Rides */}
-            <section className="py-32 bg-white overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16">
+            <section className="py-16 md:py-32 bg-white overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     {/* Text Content */}
                     <div className="md:w-1/2 text-left">
-                        <h2 className="text-5xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Get Quick Rides,<br />Low Fares</h2>
+                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Get Quick Rides,<br />Low Fares</h2>
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
                             In Genzo we ensure our customers get rides quickly at the most affordable prices.
                         </p>
@@ -166,11 +194,11 @@ function Home() {
             </section>
 
             {/* Info Section 2: Flexible Hours */}
-            <section className="py-32 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row-reverse items-center gap-16">
+            <section className="py-16 md:py-32 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16">
                     {/* Text Content */}
                     <div className="md:w-1/2 text-left">
-                        <h2 className="text-5xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Flexible Hours &<br />High Earnings</h2>
+                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Flexible Hours &<br />High Earnings</h2>
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
                             Join as a Genzo captain and earn on your schedule. Be your own boss.
                         </p>
@@ -192,10 +220,10 @@ function Home() {
             </section>
 
             {/* Safety For All Section (New) */}
-            <section className="py-24 bg-white overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16">
+            <section className="py-12 md:py-24 bg-white overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="md:w-1/2 text-left">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                             Safety for all
                             <div className="h-2 w-20 bg-yellow-400 mt-3 rounded-full"></div>
                         </h2>
@@ -213,9 +241,9 @@ function Home() {
             </section>
 
             {/* Download Now Section (New) */}
-            <section className="bg-black py-20 text-center">
+            <section className="bg-black py-10 md:py-20 text-center">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-white mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
                         Download Now
                         <div className="h-1 w-20 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
                     </h2>

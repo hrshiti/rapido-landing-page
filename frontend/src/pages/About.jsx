@@ -12,11 +12,12 @@ import GenzoLogo from '../assets/GenzoLogo-removebg-preview.png';
 
 function About() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
         <div className="font-sans text-gray-800 bg-white">
             {/* Header - Specific to About Page */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50">
                 <div className="flex items-center">
                     {/* Logo Image */}
                     <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
@@ -37,13 +38,40 @@ function About() {
                     Download App
                 </button>
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
 
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
+
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-center gap-16 relative overflow-hidden">
+            <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16 relative overflow-hidden">
 
                 {/* Background Blob - Absolute positioned loosely to match the feel */}
                 <div className="absolute top-0 right-0 w-2/3 h-full bg-[#FFFBEB] -z-10 rounded-l-[10rem] translate-x-1/4 scale-110"></div>
@@ -52,7 +80,7 @@ function About() {
                 <div className="md:w-1/2 z-10">
                     <div className="inline-block px-4 py-1 rounded-full text-xs font-bold tracking-wider mb-6" style={{ backgroundColor: '#FFE755' }}>Genzo</div>
 
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-gray-900 leading-tight">
+                    <h1 className="text-3xl md:text-6xl font-extrabold mb-10 text-gray-900 leading-tight">
                         India’s Beloved<br />
                         Bike Taxi Service
                     </h1>
@@ -75,7 +103,7 @@ function About() {
                 </div>
 
                 {/* Image Section */}
-                <div className="md:w-1/2 relative h-[600px] w-full flex items-center justify-center">
+                <div className="md:w-1/2 relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
                     {/* Organic Background Shape - Creamy Yellow */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-[#FFFBEB] rounded-[4rem] -z-10 rotate-12"></div>
 
@@ -96,15 +124,15 @@ function About() {
             </main>
 
             {/* Champions Section */}
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="py-12 md:py-24 bg-white relative overflow-hidden">
                 {/* Background Large Blob - Left Side */}
                 <div className="absolute top-1/2 left-0 w-1/2 h-full bg-[#FFFBEB] -z-10 rounded-r-[15rem] -translate-y-1/2 -translate-x-1/4 scale-125"></div>
 
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16">
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
                     {/* Text Content */}
                     <div className="md:w-1/2">
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-8 text-gray-900 leading-tight">
                             Champions of our<br /> success story
                         </h2>
                         <div className="max-w-xl text-gray-600 text-lg leading-relaxed space-y-6">
@@ -160,7 +188,7 @@ function About() {
             </section>
 
             {/* Jobs Section */}
-            <section className="relative py-32 bg-yellow-400 overflow-hidden">
+            <section className="relative py-16 md:py-32 bg-yellow-400 overflow-hidden">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                     <img src={JobsBgImg} alt="Office" className="w-full h-full object-cover grayscale opacity-20" />
@@ -168,7 +196,7 @@ function About() {
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
-                    <h2 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-wide">
+                    <h2 className="text-3xl md:text-6xl font-light text-white mb-6 tracking-wide">
                         Jobs @ Genzo
                     </h2>
                     <p className="text-white text-xl mb-10 font-light">

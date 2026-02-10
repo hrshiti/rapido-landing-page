@@ -5,11 +5,12 @@ import GenzoLogo from '../assets/GenzoLogo-removebg-preview.png';
 
 function Contact() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
         <div className="font-sans text-gray-800 bg-white min-h-screen flex flex-col justify-between">
             {/* Header */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50">
                 <div className="flex items-center">
                     {/* Logo Image */}
                     <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
@@ -30,18 +31,45 @@ function Contact() {
                     Download App
                 </button>
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
 
-            {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 w-full flex-grow">
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
 
-                <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">You can find us here</h1>
+            {/* Main Content */}
+            <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16 w-full flex-grow">
+
+                <h1 className="text-3xl md:text-5xl font-bold text-black mb-4">You can find us here</h1>
                 <p className="text-gray-500 mb-12 text-lg">Find help for your queries here:</p>
 
-                <div className="flex flex-col lg:flex-row gap-20">
+                <div className="flex flex-col lg:flex-row gap-10 md:gap-20">
                     {/* Left Column: Form */}
                     <div className="flex-1">
                         <form className="space-y-6">

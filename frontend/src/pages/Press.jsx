@@ -8,6 +8,7 @@ import PressImg3 from '../assets/press3.jpg';
 
 const Press = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Press Data based on the image provided
     const pressReleases = [
@@ -56,7 +57,7 @@ const Press = () => {
     return (
         <div className="font-sans text-gray-800 bg-white min-h-screen relative overflow-hidden">
             {/* Header */}
-            <header className="flex justify-between items-center px-10 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
                 <div className="flex items-center">
                     <img src={Logo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
@@ -75,13 +76,40 @@ const Press = () => {
                         Download App
                     </button>
                 </nav>
-                <button className="md:hidden text-2xl p-2 text-gray-800">
-                    <span role="img" aria-label="menu">☰</span>
+                <button
+                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
                 </button>
             </header>
 
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
+                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="text-black border-b-2 border-yellow-400 pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <button
+                            onClick={() => {
+                                setIsModalOpen(true);
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
+                        >
+                            Download App
+                        </button>
+                    </nav>
+                </div>
+            )}
+
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 relative z-10 pb-40">
+            <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-16 relative z-10 pb-20 md:pb-40">
                 {/* Background Shape Left */}
                 <div className="absolute top-0 left-0 w-1/3 h-screen bg-[#FFFBEB] -z-10 transform -skew-x-12 -translate-x-32 opacity-50"></div>
 
@@ -94,11 +122,11 @@ const Press = () => {
                     </div>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl font-light mb-20 text-gray-800">
+                <h1 className="text-3xl md:text-6xl font-light mb-10 md:mb-20 text-gray-800">
                     Press and <span className="font-bold">Media</span>
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10 md:gap-y-16">
                     {pressReleases.map((item, index) => (
                         <div key={index} className="flex flex-col items-center">
                             {/* Image Card */}

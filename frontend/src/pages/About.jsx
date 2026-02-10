@@ -48,7 +48,7 @@ function About() {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden">
+                <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
                         <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
                         <a href="/about" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>

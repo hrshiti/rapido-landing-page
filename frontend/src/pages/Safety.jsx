@@ -25,17 +25,17 @@ function Safety() {
                     <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
                 <nav className="hidden md:flex items-center space-x-12 text-base font-medium text-gray-800">
-                    <a href="/" className="hover:text-black transition-colors">Home</a>
-                    <a href="/about" className="hover:text-black transition-colors">About Us</a>
-                    <a href="/safety" className="text-black font-bold border-b-2 border-black pb-1">Safety</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-black transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
+                    <a href="/" className="hover:text-[#FF8C00] transition-colors">Home</a>
+                    <a href="/about" className="hover:text-[#FF8C00] transition-colors">About Us</a>
+                    <a href="/safety" className="text-black font-bold border-b-2 border-[#FFE755] pb-1">Safety</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
+                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
+                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
                 </nav>
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="hidden md:block bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition-colors"
+                    className="hidden md:block bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-[#333] transition-colors border border-transparent hover:border-[#FFE755]"
                 >
                     Download App
                 </button>
@@ -181,7 +181,7 @@ function Safety() {
                     </section>
 
                     {/* Safety Measures Section */}
-                    <section className="bg-[#F9D423] py-12 md:py-24 text-black">
+                    <section className="bg-[#FFE755] py-12 md:py-24 text-black">
                         <div className="max-w-7xl mx-auto px-6 md:px-12">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
                                 {/* Top Left: Main Header */}
@@ -265,25 +265,25 @@ function Safety() {
             {/* Customers Tab Content */}
             {activeTab === 'customers' && (
                 <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 min-h-[50vh]">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-12 text-black">Safety for <span className="text-yellow-500">Customers</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-12 text-black">Safety for <span className="text-[#FF8C00]">Customers</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100">
-                            <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 text-2xl">📍</div>
+                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#FFE755]">
+                            <div className="w-12 h-12 bg-[#FFE755] rounded-full flex items-center justify-center mb-6 text-2xl">📍</div>
                             <h3 className="text-2xl font-bold mb-4">Live Ride Tracking</h3>
                             <p className="text-gray-600 leading-relaxed">Share your real-time ride status with family and friends. They can track your movement on the map and ensure you reach your destination safely.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100">
+                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#FFE755]">
                             <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-6 text-2xl">📞</div>
                             <h3 className="text-2xl font-bold mb-4">Number Masking</h3>
                             <p className="text-gray-600 leading-relaxed">Your privacy is important. We mask your phone number so that the captain cannot see your personal contact details when you call them via the app.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100">
-                            <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-6 text-2xl text-white">🆘</div>
+                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#FFE755]">
+                            <div className="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center mb-6 text-2xl text-white">🆘</div>
                             <h3 className="text-2xl font-bold mb-4">SOS Emergency Button</h3>
                             <p className="text-gray-600 leading-relaxed">In case of any emergency, press the SOS button to immediately alert our safety team and your trusted contacts with your live location.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100">
-                            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-6 text-2xl text-white">🎧</div>
+                        <div className="p-8 rounded-3xl bg-gray-50 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#FFE755]">
+                            <div className="w-12 h-12 bg-[#3B82F6] rounded-full flex items-center justify-center mb-6 text-2xl text-white">🎧</div>
                             <h3 className="text-2xl font-bold mb-4">24/7 Safety Support</h3>
                             <p className="text-gray-600 leading-relaxed">Our dedicated safety response team is available round-the-clock to assist you with any safety-related concerns during or after your ride.</p>
                         </div>
@@ -294,25 +294,25 @@ function Safety() {
             {/* Captains Tab Content */}
             {activeTab === 'captains' && (
                 <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 min-h-[50vh]">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-12 text-black">Safety for <span className="text-yellow-500">Captains</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-12 text-black">Safety for <span className="text-[#FF8C00]">Captains</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="p-8 rounded-3xl bg-yellow-50 hover:shadow-lg transition-all duration-300 border border-yellow-100">
+                        <div className="p-8 rounded-3xl bg-[#FFFBEB] hover:shadow-lg transition-all duration-300 border border-[#FFE755]/30">
                             <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-6 text-2xl text-white">🏥</div>
                             <h3 className="text-2xl font-bold mb-4">Accidental Insurance</h3>
                             <p className="text-gray-600 leading-relaxed">We provide comprehensive accidental insurance coverage for all our captains, covering medical expenses and hospitalization in case of mishaps during a ride.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-yellow-50 hover:shadow-lg transition-all duration-300 border border-yellow-100">
-                            <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mb-6 text-2xl">⛑️</div>
+                        <div className="p-8 rounded-3xl bg-[#FFFBEB] hover:shadow-lg transition-all duration-300 border border-[#FFE755]/30">
+                            <div className="w-12 h-12 bg-[#FFE755] rounded-full flex items-center justify-center mb-6 text-2xl">⛑️</div>
                             <h3 className="text-2xl font-bold mb-4">Helmet Enforcement</h3>
                             <p className="text-gray-600 leading-relaxed">We strictly enforce helmet usage and provide assistance in procuring high-quality helmets to ensure you are always protected on the road.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-yellow-50 hover:shadow-lg transition-all duration-300 border border-yellow-100">
-                            <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-6 text-2xl text-white">🚫</div>
+                        <div className="p-8 rounded-3xl bg-[#FFFBEB] hover:shadow-lg transition-all duration-300 border border-[#FFE755]/30">
+                            <div className="w-12 h-12 bg-[#EF4444] rounded-full flex items-center justify-center mb-6 text-2xl text-white">🚫</div>
                             <h3 className="text-2xl font-bold mb-4">Zero Tolerance Policy</h3>
                             <p className="text-gray-600 leading-relaxed">Your dignity matters. We have a zero-tolerance policy against any form of harassment or misconduct from customers, ensuring a respectful working environment.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-yellow-50 hover:shadow-lg transition-all duration-300 border border-yellow-100">
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-6 text-2xl text-white">🚨</div>
+                        <div className="p-8 rounded-3xl bg-[#FFFBEB] hover:shadow-lg transition-all duration-300 border border-[#FFE755]/30">
+                            <div className="w-12 h-12 bg-[#2563EB] rounded-full flex items-center justify-center mb-6 text-2xl text-white">🚨</div>
                             <h3 className="text-2xl font-bold mb-4">Captain Helpline</h3>
                             <p className="text-gray-600 leading-relaxed">A dedicated helpline exists solely for our captains to report legitimate grievances or safety issues, with priority resolution.</p>
                         </div>

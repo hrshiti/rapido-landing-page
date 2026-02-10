@@ -85,10 +85,10 @@ const Blog = () => {
                 <nav className="hidden md:flex items-center space-x-10 text-sm font-semibold text-gray-800">
                     <a href="/" className="hover:text-black transition-colors">Home</a>
                     <a href="/about" className="hover:text-black transition-colors">About Us</a>
-                    <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="/blog" className="text-black border-b-2 border-yellow-400 pb-1 transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-black transition-colors">Press</a>
+                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="/blog" className="text-black border-b-2 border-[#FFE755] pb-1 transition-colors">Blog</a>
+                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
                     <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
                     <button
                         onClick={() => setIsModalOpen(true)}
@@ -109,13 +109,13 @@ const Blog = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
-                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/blog" className="text-black border-b-2 border-yellow-400 pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <a href="/" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="text-black border-b-2 border-[#FFE755] pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
                         <button
                             onClick={() => {
                                 setIsModalOpen(true);
@@ -138,7 +138,7 @@ const Blog = () => {
                 <div className="absolute top-20 right-0 opacity-20 -z-10">
                     <div className="grid grid-cols-12 gap-3">
                         {[...Array(96)].map((_, i) => (
-                            <div key={i} className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+                            <div key={i} className="w-1.5 h-1.5 bg-[#FFE755] rounded-full"></div>
                         ))}
                     </div>
                 </div>
@@ -153,7 +153,7 @@ const Blog = () => {
                                 {index < 2 && (
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
                                         <span className="text-white bg-blue-600 px-2 py-0.5 text-xs font-bold w-fit mb-2">ACKO DRIVE</span>
-                                        <h3 className="text-white font-bold text-lg uppercase leading-tight selection:bg-yellow-400">{post.title}</h3>
+                                        <h3 className="text-white font-bold text-lg uppercase leading-tight selection:bg-[#FFE755]">{post.title}</h3>
                                     </div>
                                 )}
                             </div>
@@ -162,7 +162,7 @@ const Blog = () => {
                                 <span className="text-gray-400 text-xs mb-3">{post.date}</span>
                                 {index >= 2 ? (
                                     <>
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-yellow-600 transition-colors">{post.title}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-[#FF8C00] transition-colors">{post.title}</h3>
                                         <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4 font-light">
                                             {post.description}
                                         </p>
@@ -174,7 +174,7 @@ const Blog = () => {
                                     // Row 1, Card 1: Text IS below the image. "Jaw dropping prices on Brand new cars".
                                     // So I should render title below for ALL items.
                                     // The "ACKO DRIVE" overlay is inside the image.
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-yellow-600 transition-colors">{post.title}</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-[#FF8C00] transition-colors">{post.title}</h3>
                                 )}
                             </div>
                         </div>
@@ -183,7 +183,7 @@ const Blog = () => {
 
                 {/* Pagination */}
                 <div className="flex justify-center items-center mt-20 space-x-4">
-                    <button className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold shadow-md hover:bg-yellow-500 transition-colors">
+                    <button className="w-10 h-10 rounded-full bg-[#FFE755] flex items-center justify-center text-white font-bold shadow-md hover:bg-[#FF8C00] transition-colors">
                         1
                     </button>
                     <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold hover:bg-gray-200 transition-colors">

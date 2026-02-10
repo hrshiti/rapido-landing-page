@@ -45,9 +45,9 @@ const Careers = () => {
                 <nav className="hidden md:flex items-center space-x-10 text-sm font-semibold text-gray-800">
                     <a href="/" className="hover:text-black transition-colors">Home</a>
                     <a href="/about" className="hover:text-black transition-colors">About Us</a>
-                    <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/careers" className="text-black border-b-2 border-yellow-400 pb-1 transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
+                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
+                    <a href="/careers" className="text-black border-b-2 border-[#FFE755] pb-1 transition-colors">Careers</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
                     <a href="/press" className="hover:text-black transition-colors">Press</a>
                     <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
                     <button
@@ -69,13 +69,13 @@ const Careers = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
-                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/careers" className="text-black border-b-2 border-yellow-400 pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <a href="/" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="text-black border-b-2 border-[#FFE755] pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
                         <button
                             onClick={() => {
                                 setIsModalOpen(true);
@@ -192,7 +192,7 @@ const Careers = () => {
                     </div>
                     {/* Dots / Navigation Placeholder */}
                     <div className="flex justify-center mt-6 space-x-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FFE755]"></div>
                         <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@ const Careers = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
                         <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
                         <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FFE755]"></div>
                     </div>
                 </div>
 
@@ -251,13 +251,13 @@ const Careers = () => {
                 <div className="absolute bottom-10 right-10 md:right-40 z-0 opacity-20">
                     <div className="grid grid-cols-10 gap-2">
                         {[...Array(100)].map((_, i) => (
-                            <div key={i} className="w-1 h-1 bg-yellow-400 rounded-full"></div>
+                            <div key={i} className="w-1 h-1 bg-[#FFE755] rounded-full"></div>
                         ))}
                     </div>
                 </div>
 
                 {/* Bottom small yellow dash */}
-                <div className="w-10 h-1 bg-yellow-400 mx-auto mt-20 mb-10"></div>
+                <div className="w-10 h-1 bg-[#FFE755] mx-auto mt-20 mb-10"></div>
             </section>
 
             {/* Footer - Black Version */}

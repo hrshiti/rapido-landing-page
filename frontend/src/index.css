@@ -2,6 +2,8 @@
 
 @theme {
     --font-sans: 'Alata', sans-serif;
+    --color-primary: #ffe755;
+    --color-secondary: #ff8c00;
 }
 
 body {

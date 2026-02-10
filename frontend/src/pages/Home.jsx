@@ -43,16 +43,16 @@ function Home() {
                     <img src={Logo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
                 <nav className="hidden md:flex items-center space-x-12 text-base font-medium text-gray-800">
-                    <a href="/about" className="hover:text-black transition-colors">About Us</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="#" className="hover:text-black transition-colors">Genzo Ads</a>
-                    <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-black transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
+                    <a href="/about" className="hover:text-[#FF8C00] transition-colors">About Us</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="#" className="hover:text-[#FF8C00] transition-colors">Genzo Ads</a>
+                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
+                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
+                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg"
+                        className="bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg border border-transparent hover:border-[#FFE755]"
                     >
                         Download App
                     </button>
@@ -144,14 +144,14 @@ function Home() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-16 text-gray-900 leading-tight">
                         Our Services
                         {/* Yellow Underline */}
-                        <div className="h-2 w-16 mt-2" style={{ backgroundColor: '#FFE755' }}></div>
+                        <div className="h-2 w-16 mt-2 bg-[#FFE755]"></div>
                     </h2>
 
                     {/* 4 columns layout */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                         {services.map((service, index) => (
                             <div key={index} className="flex flex-col items-center md:items-start group cursor-pointer transition-all hover:-translate-y-1">
-                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-5 hover:border-yellow-400">
+                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-5 hover:border-[#FFE755]">
                                     <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply" />
                                 </div>
                                 <span className="text-xl font-bold text-gray-900 pl-2">{service.name}</span>
@@ -202,7 +202,7 @@ function Home() {
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
                             Join as a Genzo captain and earn on your schedule. Be your own boss.
                         </p>
-                        <button className="px-10 py-4 rounded-full font-bold text-lg text-white transition-all transform hover:scale-105 hover:bg-gray-800 shadow-xl bg-black">
+                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 shadow-xl bg-[#FFE755] hover:bg-[#FFD700]">
                             Join as Captain &rarr;
                         </button>
                     </div>
@@ -225,12 +225,12 @@ function Home() {
                     <div className="md:w-1/2 text-left">
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                             Safety for all
-                            <div className="h-2 w-20 bg-yellow-400 mt-3 rounded-full"></div>
+                            <div className="h-2 w-20 bg-[#FFE755] mt-3 rounded-full"></div>
                         </h2>
                         <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
                             At Genzo, your safety is our priority. We’re dedicated to making every ride safe and comfortable.
                         </p>
-                        <a href="#" className="text-blue-600 font-bold text-lg hover:underline">Know More &gt;</a>
+                        <a href="#" className="text-[#FF8C00] font-bold text-lg hover:underline decoration-[#FF8C00]">Know More &gt;</a>
                     </div>
                     <div className="md:w-1/2 w-full">
                         <div className="rounded-[2.5rem] overflow-hidden shadow-lg h-[400px]">
@@ -245,12 +245,12 @@ function Home() {
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
                         Download Now
-                        <div className="h-1 w-20 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+                        <div className="h-1 w-20 bg-[#FFE755] mx-auto mt-4 rounded-full"></div>
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                         {/* App Card 1 */}
                         <div className="flex flex-col items-center">
-                            <div className="w-24 h-24 rounded-2xl bg-yellow-400 flex items-center justify-center mb-4">
+                            <div className="w-24 h-24 rounded-2xl bg-[#FFE755] flex items-center justify-center mb-4">
                                 <img src={Logo} alt="Genzo User App" className="w-16 h-16 object-contain rounded-full" />
                             </div>
                             <p className="text-white text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
@@ -258,7 +258,7 @@ function Home() {
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">
                             <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center mb-4">
-                                <span className="text-black font-extrabold text-xs text-center leading-tight">genzo<br /><span className="text-yellow-500">Captain</span></span>
+                                <span className="text-black font-extrabold text-xs text-center leading-tight">genzo<br /><span className="text-[#FF8C00]">Captain</span></span>
                             </div>
                             <p className="text-white text-lg font-bold">Genzo Captain:<br />Drive & Earn</p>
                         </div>

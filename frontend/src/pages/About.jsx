@@ -16,24 +16,24 @@ function About() {
 
     return (
         <div className="font-sans text-gray-800 bg-white">
-            {/* Header - Specific to About Page */}
+            {/* Header - Consistent with other pages but About active */}
             <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50">
                 <div className="flex items-center">
                     {/* Logo Image */}
                     <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
                 </div>
                 <nav className="hidden md:flex items-center space-x-12 text-base font-medium text-gray-800">
-                    <a href="/" className="hover:text-black transition-colors">Home</a>
-                    <a href="/about" className="text-black font-bold border-b-2 border-black pb-1">About Us</a>
-                    <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-black transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
+                    <a href="/" className="hover:text-[#FF8C00] transition-colors">Home</a>
+                    <a href="/about" className="text-black font-bold border-b-2 border-[#FFE755] pb-1">About Us</a>
+                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
+                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
+                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
                 </nav>
                 <button
                     onClick={() => setIsModalOpen(true)}
-                    className="hidden md:block bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition-colors"
+                    className="hidden md:block bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-[#333] transition-colors border border-transparent hover:border-[#FFE755]"
                 >
                     Download App
                 </button>
@@ -154,7 +154,7 @@ function About() {
                                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop" alt="Rishikesh S R" className="w-full h-full object-cover" />
                                 </div>
                                 {/* Yellow background shape */}
-                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#F9D423] -z-0"></div>
+                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#FFE755] -z-0"></div>
                             </div>
                             <h3 className="font-bold text-gray-900 text-lg">Rishikesh S R</h3>
                             <p className="text-gray-500 text-sm">Founder</p>
@@ -166,7 +166,7 @@ function About() {
                                 <div className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg relative z-10 bg-gray-200">
                                     <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2574&auto=format&fit=crop" alt="Pavan Guntupalli" className="w-full h-full object-cover" />
                                 </div>
-                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#F9D423] -z-0"></div>
+                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#FFE755] -z-0"></div>
                             </div>
                             <h3 className="font-bold text-gray-900 text-lg">Pavan Guntupalli</h3>
                             <p className="text-gray-500 text-sm">Founder</p>
@@ -178,7 +178,7 @@ function About() {
                                 <div className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg relative z-10 bg-gray-200">
                                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2670&auto=format&fit=crop" alt="Aravind Sanka" className="w-full h-full object-cover" />
                                 </div>
-                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#F9D423] -z-0"></div>
+                                <div className="absolute top-2 -right-2 w-full h-full rounded-[2rem] bg-[#FFE755] -z-0"></div>
                             </div>
                             <h3 className="font-bold text-gray-900 text-lg">Aravind Sanka</h3>
                             <p className="text-gray-500 text-sm">Founder</p>
@@ -188,21 +188,21 @@ function About() {
             </section>
 
             {/* Jobs Section */}
-            <section className="relative py-16 md:py-32 bg-yellow-400 overflow-hidden">
+            <section className="relative py-16 md:py-32 bg-[#FFE755] overflow-hidden">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                     <img src={JobsBgImg} alt="Office" className="w-full h-full object-cover grayscale opacity-20" />
-                    <div className="absolute inset-0 bg-[#F9D423] opacity-90 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-[#FFE755] opacity-90 mix-blend-multiply"></div>
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
-                    <h2 className="text-3xl md:text-6xl font-light text-white mb-6 tracking-wide">
+                    <h2 className="text-3xl md:text-6xl font-light text-black mb-6 tracking-wide">
                         Jobs @ Genzo
                     </h2>
-                    <p className="text-white text-xl mb-10 font-light">
+                    <p className="text-black text-xl mb-10 font-light">
                         Join us in exploring a world of endless opportunities. Let's find a spot for you.
                     </p>
-                    <button className="bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-transform transform hover:scale-105">
+                    <button className="bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#333] transition-transform transform hover:scale-105">
                         Work with us
                     </button>
                 </div>

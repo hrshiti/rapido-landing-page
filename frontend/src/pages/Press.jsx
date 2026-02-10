@@ -65,10 +65,10 @@ const Press = () => {
                     <a href="/" className="hover:text-black transition-colors">Home</a>
                     <a href="/about" className="hover:text-black transition-colors">About Us</a>
                     <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
-                    <a href="/press" className="text-black border-b-2 border-yellow-400 pb-1 transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-black transition-colors">Contact Us</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
+                    <a href="/press" className="text-black border-b-2 border-[#FFE755] pb-1 transition-colors">Press</a>
+                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
                     <button
                         onClick={() => setIsModalOpen(true)}
                         className="bg-black text-white px-6 py-2.5 rounded shadow-lg hover:bg-gray-800 transition-colors text-sm font-bold tracking-wide"
@@ -88,13 +88,13 @@ const Press = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
-                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="text-black border-b-2 border-yellow-400 pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <a href="/" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+                        <a href="/about" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="text-black border-b-2 border-[#FFE755] pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
                         <button
                             onClick={() => {
                                 setIsModalOpen(true);
@@ -117,7 +117,7 @@ const Press = () => {
                 <div className="absolute top-24 right-0 opacity-20 -z-10">
                     <div className="grid grid-cols-12 gap-3">
                         {[...Array(84)].map((_, i) => (
-                            <div key={i} className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+                            <div key={i} className="w-1.5 h-1.5 bg-[#FFE755] rounded-full"></div>
                         ))}
                     </div>
                 </div>
@@ -139,7 +139,7 @@ const Press = () => {
                                 <p className="text-gray-500 text-xs leading-6 mb-4 line-clamp-6">
                                     {item.text}
                                 </p>
-                                <a href="#" className="text-blue-400 text-sm font-medium hover:underline">
+                                <a href="#" className="text-[#FF8C00] text-sm font-medium hover:underline">
                                     {item.source}
                                 </a>
                             </div>

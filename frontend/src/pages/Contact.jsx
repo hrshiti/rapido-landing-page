@@ -19,10 +19,10 @@ function Contact() {
                     <a href="/" className="hover:text-black transition-colors">Home</a>
                     <a href="/about" className="hover:text-black transition-colors">About Us</a>
                     <a href="/safety" className="hover:text-black transition-colors">Safety</a>
-                    <a href="/careers" className="hover:text-black transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-black transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-black transition-colors">Press</a>
-                    <a href="/contact" className="text-black font-bold border-b-2 border-black pb-1">Contact Us</a>
+                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
+                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
+                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
+                    <a href="/contact" className="text-black font-bold border-b-2 border-[#FFE755] pb-1">Contact Us</a>
                 </nav>
                 <button
                     onClick={() => setIsModalOpen(true)}
@@ -44,12 +44,12 @@ function Contact() {
                 <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
                         <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <a href="/about" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+                        <a href="/safety" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
+                        <a href="/careers" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+                        <a href="/blog" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
+                        <a href="/press" className="hover:text-[#FF8C00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
+                        <a href="/contact" className="text-black font-bold border-b-2 border-[#FFE755] pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
                         <button
                             onClick={() => {
                                 setIsModalOpen(true);
@@ -74,24 +74,24 @@ function Contact() {
                     <div className="flex-1">
                         <form className="space-y-6">
                             <div>
-                                <label className="block text-gray-700 text-sm font-medium mb-2">Name <span className="text-yellow-400">*</span></label>
-                                <input type="text" placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-yellow-400 bg-gray-50 text-sm placeholder-gray-400" />
+                                <label className="block text-gray-700 text-sm font-medium mb-2">Name <span className="text-[#FF8C00]">*</span></label>
+                                <input type="text" placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 text-sm font-medium mb-2">Email Address <span className="text-yellow-400">*</span></label>
-                                <input type="email" placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-yellow-400 bg-gray-50 text-sm placeholder-gray-400" />
+                                <label className="block text-gray-700 text-sm font-medium mb-2">Email Address <span className="text-[#FF8C00]">*</span></label>
+                                <input type="email" placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 text-sm font-medium mb-2">Mobile Number <span className="text-yellow-400">*</span></label>
-                                <input type="tel" placeholder="Enter your mobile number" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-yellow-400 bg-gray-50 text-sm placeholder-gray-400" />
+                                <label className="block text-gray-700 text-sm font-medium mb-2">Mobile Number <span className="text-[#FF8C00]">*</span></label>
+                                <input type="tel" placeholder="Enter your mobile number" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 text-sm font-medium mb-2">You are a <span className="text-yellow-400">*</span></label>
+                                <label className="block text-gray-700 text-sm font-medium mb-2">You are a <span className="text-[#FF8C00]">*</span></label>
                                 <div className="relative">
-                                    <select className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-yellow-400 bg-gray-50 appearance-none text-sm">
+                                    <select className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 appearance-none text-sm">
                                         <option value="" disabled selected>--select--</option>
                                         <option value="customer">Customer</option>
                                         <option value="captain">Captain</option>
@@ -103,11 +103,11 @@ function Contact() {
                             </div>
 
                             <div>
-                                <label className="block text-gray-700 text-sm font-medium mb-2">Comment <span className="text-yellow-400">*</span></label>
-                                <textarea rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-yellow-400 bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
+                                <label className="block text-gray-700 text-sm font-medium mb-2">Comment <span className="text-[#FF8C00]">*</span></label>
+                                <textarea rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
                             </div>
 
-                            <button type="submit" className="w-full py-3 rounded font-bold text-black transition-colors hover:bg-yellow-500 mt-6" style={{ backgroundColor: '#F9D423' }}>
+                            <button type="submit" className="w-full py-3 rounded font-bold text-black transition-colors hover:bg-[#FF8C00] mt-6" style={{ backgroundColor: '#FFE755' }}>
                                 Submit
                             </button>
                         </form>
@@ -119,7 +119,7 @@ function Contact() {
                         <div className="absolute -top-10 right-0 opacity-40">
                             <div className="grid grid-cols-12 gap-2">
                                 {[...Array(72)].map((_, i) => (
-                                    <div key={i} className="w-1 h-1 bg-yellow-400 rounded-full"></div>
+                                    <div key={i} className="w-1 h-1 bg-[#FFE755] rounded-full"></div>
                                 ))}
                             </div>
                         </div>

@@ -25,13 +25,14 @@ import SafetyImg from "../assets/Images for Website with Titles/Everyones Safety
 function Home() {
     const [pickup, setPickup] = useState('');
     const [drop, setDrop] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const services = [
         { name: 'Bike', icon: BikeIcon },
         { name: 'Auto', icon: AutoIcon },
-        { name: 'eRickshaw', icon: ERickshawIcon },
-        { name: 'Parcel', icon: ParcelIcon },
+        { name: 'E-rickshaw', icon: ERickshawIcon },
         { name: 'Taxi', icon: TaxiIcon },
+        { name: 'Parcel', icon: ParcelIcon },
     ];
 
     return (
@@ -81,7 +82,10 @@ function Home() {
                             />
                         </div>
 
-                        <button className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white"
+                        >
                             Book Ride
                         </button>
                     </div>
@@ -120,7 +124,10 @@ function Home() {
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
                             At Genzo, we make sure you get quick rides without worrying about high fares, so every trip stays easy on your pocket.
                         </p>
-                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 hover:bg-white shadow-xl bg-[#FFBC00]">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 hover:bg-white shadow-xl bg-[#FFBC00]"
+                        >
                             Book a ride &rarr;
                         </button>
                     </div>
@@ -152,7 +159,10 @@ function Home() {
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
                             Join Genzo as a Pilot and enjoy flexible work with earnings based on availability.
                         </p>
-                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 shadow-xl bg-[#FFBC00] hover:bg-white">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 shadow-xl bg-[#FFBC00] hover:bg-white"
+                        >
                             Join as Pilot &rarr;
                         </button>
                     </div>
@@ -190,26 +200,22 @@ function Home() {
             </section>
 
             {/* Download Now Section (New) */}
-            <section className="bg-black py-10 md:py-20 text-center">
+            <section className="bg-gray-100 py-10 md:py-20 text-center">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
                         Download Now
                         <div className="h-1 w-20 bg-[#FFE755] mx-auto mt-4 rounded-full"></div>
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                         {/* App Card 1 */}
                         <div className="flex flex-col items-center">
-                            <div className="w-24 h-24 rounded-2xl bg-[#FFE755] flex items-center justify-center mb-4">
-                                <img src={Logo} alt="Genzo User App" className="w-16 h-16 object-contain rounded-full" />
-                            </div>
-                            <p className="text-white text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
+                            <img src={Logo} alt="Genzo User App" className="w-24 h-24 object-contain mb-4 rounded-full" />
+                            <p className="text-gray-900 text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
                         </div>
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">
-                            <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center mb-4 p-2">
-                                <img src={PilotLogo} alt="Genzo Pilot App" className="w-full h-full object-contain" />
-                            </div>
-                            <p className="text-white text-lg font-bold">Genzo Pilot:<br />Drive & Earn</p>
+                            <img src={PilotLogo} alt="Genzo Pilot App" className="w-24 h-24 object-contain mb-4 rounded-full" />
+                            <p className="text-gray-900 text-lg font-bold">Genzo Pilot:<br />Drive & Earn</p>
                         </div>
                     </div>
                 </div>
@@ -217,7 +223,11 @@ function Home() {
 
             {/* Footer */}
             {/* Footer */}
+            {/* Footer */}
             <Footer />
+
+            {/* Download App Modal */}
+            <DownloadAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         </div>
     );

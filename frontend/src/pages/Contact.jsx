@@ -16,7 +16,7 @@ function Contact() {
                 <div className="flex flex-col lg:flex-row gap-10 md:gap-20">
                     {/* Left Column: Form */}
                     <div className="flex-1">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Form submitted!"); }}>
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Name <span className="text-[#FF8C00]">*</span></label>
                                 <input type="text" placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Logo from '../assets/Genzo Logo.png';
 import DownloadAppModal from './DownloadAppModal';
 
+import { Link } from 'react-router-dom';
+
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,17 +13,17 @@ const Header = () => {
             {/* Header */}
             <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-black sticky top-0 z-50 shadow-sm">
                 <div className="flex items-center -my-2">
-                    <a href="/">
+                    <Link to="/">
                         <img src={Logo} alt="Genzo Logo" className="h-24 md:h-24 w-auto object-contain" />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Centered Navigation */}
                 <nav className="hidden md:flex items-center justify-center flex-1 space-x-10 text-base font-medium text-white">
-                    <a href="/" className="hover:text-[#FFBC00] transition-colors">Home</a>
-                    <a href="/about" className="hover:text-[#FFBC00] transition-colors">About Us</a>
-                    <a href="/careers" className="hover:text-[#FFBC00] transition-colors">Careers</a>
-                    <a href="/contact" className="hover:text-[#FFBC00] transition-colors">Contact Us</a>
+                    <Link to="/" className="hover:text-[#FFBC00] transition-colors">Home</Link>
+                    <Link to="/about" className="hover:text-[#FFBC00] transition-colors">About Us</Link>
+                    <Link to="/careers" className="hover:text-[#FFBC00] transition-colors">Careers</Link>
+                    <Link to="/contact" className="hover:text-[#FFBC00] transition-colors">Contact Us</Link>
                 </nav>
 
                 {/* Download Button */}
@@ -47,10 +49,10 @@ const Header = () => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-40 bg-black pt-20 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-white">
-                        <a href="/" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/careers" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/contact" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+                        <Link to="/" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                        <Link to="/about" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                        <Link to="/careers" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
+                        <Link to="/contact" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
                         <button
                             onClick={() => {
                                 setIsModalOpen(true);

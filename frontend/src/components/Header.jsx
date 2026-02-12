@@ -11,10 +11,10 @@ const Header = () => {
     return (
         <>
             {/* Header */}
-            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-black sticky top-0 z-50 shadow-sm">
+            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-black sticky top-0 z-50 shadow-sm overflow-hidden">
                 <div className="flex items-center -my-2">
                     <Link to="/">
-                        <img src={Logo} alt="Genzo Logo" className="h-24 md:h-24 w-auto object-contain" />
+                        <img src={Logo} alt="Genzo Logo" className="h-24 md:h-24 w-auto object-contain transform scale-150 relative z-10" />
                     </Link>
                 </div>
 

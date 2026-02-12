@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import DownloadAppModal from '../components/DownloadAppModal';
+import Header from '../components/Header';
 import '../App.css';
 
 // Importing assets
 import Footer from '../components/Footer';
-import Logo from '../assets/GenzoLogo-removebg-preview.png';
+import Logo from '../assets/Genzo Logo.png';
+import PilotLogo from '../assets/Genzo Pilot Logo.png';
 import BikeIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Bike.png';
 import AutoIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Auto Rickshaw.png';
 import ERickshawIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/eRickshaw.png';
@@ -12,83 +14,31 @@ import ParcelIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Parcel.png'
 import TaxiIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Taxi.png';
 
 // Import downloaded images
-import Ride1 from '../assets/img1.jpg';
-import Ride2 from '../assets/img4.avif'; // Using img4
-import Ride3 from '../assets/img2.webp'; // Reusing img2
-import Ride4 from '../assets/img3.jpeg'; // Reusing img3
-import Driver1 from '../assets/img5.jpg'; // Using img5
-import Driver2 from '../assets/img2.webp';
-import SafetyImg from '../assets/img3.jpeg'; // Renamed back to SafetyImg to match usage
+import Ride1 from "../assets/Images for Website with Titles/1_Quick Rides, Easy on the Pocket.jpg";
+import Ride2 from "../assets/Images for Website with Titles/2_Quick Rides, Easy on the Pocket.jpg";
+import Ride3 from "../assets/Images for Website with Titles/3_Quick Rides, Easy on the Pocket.jpg";
+import Ride4 from "../assets/Images for Website with Titles/4_Quick Rides, Easy on the Pocket.jpg";
+import Driver1 from "../assets/Images for Website with Titles/1_Log In Anytime. Earn Anytime.jpg";
+import Driver2 from "../assets/Images for Website with Titles/2_Log In Anytime. Earn Anytime.jpg";
+import SafetyImg from "../assets/Images for Website with Titles/Everyones Safety Matters.jpg";
 
 function Home() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [pickup, setPickup] = useState('');
     const [drop, setDrop] = useState('');
 
     const services = [
         { name: 'Bike', icon: BikeIcon },
         { name: 'Auto', icon: AutoIcon },
-        { name: 'Auto Share', icon: ERickshawIcon }, // Using eRickshaw for Auto Share
+        { name: 'eRickshaw', icon: ERickshawIcon },
         { name: 'Parcel', icon: ParcelIcon },
-        { name: 'Cab Economy', icon: TaxiIcon },
-        { name: 'Cab Premium', icon: TaxiIcon }, // Using Taxi for both Cab options
+        { name: 'Taxi', icon: TaxiIcon },
     ];
 
     return (
         <div className="font-sans text-gray-800">
             {/* Header */}
-            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50 shadow-sm">
-                <div className="flex items-center">
-                    <img src={Logo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
-                </div>
-                <nav className="hidden md:flex items-center space-x-12 text-base font-medium text-gray-800">
-                    <a href="/about" className="hover:text-[#FF8C00] transition-colors">About Us</a>
-                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
-                    <a href="#" className="hover:text-[#FF8C00] transition-colors">Genzo Ads</a>
-                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
-                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
-                    <button
-                        onClick={() => setIsModalOpen(true)}
-                        className="bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-[#333] transition-colors shadow-lg border border-transparent hover:border-[#FFE755]"
-                    >
-                        Download App
-                    </button>
-                </nav>
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
-                </button>
-            </header>
-
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
-                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
-                        <a href="/about" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="#" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Genzo Ads</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
-                        <button
-                            onClick={() => {
-                                setIsModalOpen(true);
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
-                        >
-                            Download App
-                        </button>
-                    </nav>
-                </div>
-            )}
+            {/* Header */}
+            <Header />
 
             {/* Hero Section */}
             <section className="relative flex flex-col pt-16 items-center bg-gray-50 overflow-hidden" style={{ minHeight: '80vh' }}>
@@ -99,7 +49,7 @@ function Home() {
 
                 <div className="relative z-10 w-full max-w-3xl text-center px-4 mt-8">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 text-gray-900 tracking-tight">
-                        Bharat Moves On Genzo!
+                        Ride Anywhere. Genzo Everywhere.
                     </h1>
 
                     <div className="w-full mx-auto flex flex-col gap-5 max-w-2xl">
@@ -131,7 +81,7 @@ function Home() {
                             />
                         </div>
 
-                        <button className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black" style={{ backgroundColor: '#FFE755' }}>
+                        <button className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white">
                             Book Ride
                         </button>
                     </div>
@@ -143,18 +93,18 @@ function Home() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
                     <h2 className="text-3xl md:text-5xl font-bold mb-16 text-gray-900 leading-tight">
                         Our Services
-                        {/* Yellow Underline */}
-                        <div className="h-2 w-16 mt-2 bg-[#FFE755]"></div>
+                        {/* Orange Underline */}
+                        <div className="h-2 w-16 mt-2 bg-[#FFBC00]"></div>
                     </h2>
 
-                    {/* 4 columns layout */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                    {/* 5 columns layout */}
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
                         {services.map((service, index) => (
-                            <div key={index} className="flex flex-col items-center md:items-start group cursor-pointer transition-all hover:-translate-y-1">
-                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-5 hover:border-[#FFE755]">
+                            <div key={index} className="flex flex-col items-center group cursor-pointer transition-all hover:-translate-y-1">
+                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-3 hover:border-[#FFBC00]">
                                     <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply" />
                                 </div>
-                                <span className="text-xl font-bold text-gray-900 pl-2">{service.name}</span>
+                                <span className="text-xl font-bold text-gray-900 text-center">{service.name}</span>
                             </div>
                         ))}
                     </div>
@@ -166,11 +116,11 @@ function Home() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     {/* Text Content */}
                     <div className="md:w-1/2 text-left">
-                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Get Quick Rides,<br />Low Fares</h2>
+                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Quick Rides,<br />Easy on the Pocket</h2>
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
-                            In Genzo we ensure our customers get rides quickly at the most affordable prices.
+                            At Genzo, we make sure you get quick rides without worrying about high fares, so every trip stays easy on your pocket.
                         </p>
-                        <button className="px-10 py-4 rounded-full font-bold text-lg text-white transition-all transform hover:scale-105 hover:bg-gray-800 shadow-xl bg-black">
+                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 hover:bg-white shadow-xl bg-[#FFBC00]">
                             Book a ride &rarr;
                         </button>
                     </div>
@@ -198,12 +148,12 @@ function Home() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16">
                     {/* Text Content */}
                     <div className="md:w-1/2 text-left">
-                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Flexible Hours &<br />High Earnings</h2>
+                        <h2 className="text-3xl md:text-6xl font-extrabold mb-8 leading-tight text-gray-900">Log In Anytime.<br />Earn Anytime.</h2>
                         <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg leading-relaxed">
-                            Join as a Genzo captain and earn on your schedule. Be your own boss.
+                            Join Genzo as a Pilot and enjoy flexible work with earnings based on availability.
                         </p>
-                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 shadow-xl bg-[#FFE755] hover:bg-[#FFD700]">
-                            Join as Captain &rarr;
+                        <button className="px-10 py-4 rounded-full font-bold text-lg text-black transition-all transform hover:scale-105 shadow-xl bg-[#FFBC00] hover:bg-white">
+                            Join as Pilot &rarr;
                         </button>
                     </div>
 
@@ -224,13 +174,12 @@ function Home() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="md:w-1/2 text-left">
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
-                            Safety for all
-                            <div className="h-2 w-20 bg-[#FFE755] mt-3 rounded-full"></div>
+                            Everyone's Safety Matters
+                            <div className="h-2 w-20 bg-[#FFBC00] mt-3 rounded-full"></div>
                         </h2>
                         <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-                            At Genzo, your safety is our priority. We’re dedicated to making every ride safe and comfortable.
+                            At Genzo, everyone's safety matters, and we continuously work to ensure safe, reliable, and comfortable rides.
                         </p>
-                        <a href="#" className="text-[#FF8C00] font-bold text-lg hover:underline decoration-[#FF8C00]">Know More &gt;</a>
                     </div>
                     <div className="md:w-1/2 w-full">
                         <div className="rounded-[2.5rem] overflow-hidden shadow-lg h-[400px]">
@@ -257,10 +206,10 @@ function Home() {
                         </div>
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">
-                            <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center mb-4">
-                                <span className="text-black font-extrabold text-xs text-center leading-tight">genzo<br /><span className="text-[#FF8C00]">Captain</span></span>
+                            <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center mb-4 p-2">
+                                <img src={PilotLogo} alt="Genzo Pilot App" className="w-full h-full object-contain" />
                             </div>
-                            <p className="text-white text-lg font-bold">Genzo Captain:<br />Drive & Earn</p>
+                            <p className="text-white text-lg font-bold">Genzo Pilot:<br />Drive & Earn</p>
                         </div>
                     </div>
                 </div>
@@ -269,8 +218,6 @@ function Home() {
             {/* Footer */}
             {/* Footer */}
             <Footer />
-
-            <DownloadAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         </div>
     );

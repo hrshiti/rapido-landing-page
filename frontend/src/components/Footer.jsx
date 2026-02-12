@@ -28,9 +28,9 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Column 2: Captain App */}
+                    {/* Column 2: Pilot App */}
                     <div>
-                        <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-sm">Captain app</h4>
+                        <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-sm">Pilot app</h4>
                         <div className="flex flex-col gap-4">
                             <a href="#" className="w-36 opacity-100 hover:opacity-80 transition-opacity">
                                 <img
@@ -45,14 +45,12 @@ const Footer = () => {
                     {/* Column 3: Navigation */}
                     <div>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-                            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link to="/safety" className="hover:text-white transition-colors">Safety</Link></li>
-                            <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                            <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                            <li><Link to="/press" className="hover:text-white transition-colors">Press</Link></li>
-                            <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><Link to="/" className="hover:text-[#FFBC00] transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-[#FFBC00] transition-colors">About Us</Link></li>
+                            <li><Link to="/careers" className="hover:text-[#FFBC00] transition-colors">Careers</Link></li>
+                            <li><Link to="/contact" className="hover:text-[#FFBC00] transition-colors">Contact Us</Link></li>
+                            <li><Link to="/terms" className="hover:text-[#FFBC00] transition-colors">Terms & Conditions</Link></li>
+                            <li><Link to="/privacy" className="hover:text-[#FFBC00] transition-colors">Privacy Policy</Link></li>
                         </ul>
                     </div>
 
@@ -66,12 +64,12 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Column 5: Captain Terms & Follow Us */}
+                    {/* Column 5: Pilot Terms & Follow Us */}
                     <div>
                         <ul className="space-y-3 text-gray-400 mb-8">
-                            <li className="font-bold text-white mb-2 block md:hidden">Captain Terms</li>
-                            <li><a href="#" className="hover:text-white transition-colors">Captain Terms - Bike Taxi</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Captain Terms - Cabs and Auto</a></li>
+                            <li className="font-bold text-white mb-2 block md:hidden">Pilot Terms</li>
+                            <li><a href="#" className="hover:text-white transition-colors">Pilot Terms - Bike Taxi</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Pilot Terms - Cabs and Auto</a></li>
                         </ul>
 
                         <h4 className="font-bold mb-4 text-white uppercase tracking-wider text-sm">Follow Us</h4>

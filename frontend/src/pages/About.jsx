@@ -1,74 +1,17 @@
-import React, { useState } from 'react';
-import DownloadAppModal from '../components/DownloadAppModal';
+import React from 'react';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../App.css';
 
 // Import images
-import AboutImg1 from '../assets/img1.jpg';
-import AboutImg2 from '../assets/img2.webp';
-import JobsBgImg from '../assets/img5.jpg';
-
-import GenzoLogo from '../assets/GenzoLogo-removebg-preview.png';
+import AboutImg1 from "../assets/Images for Website with Titles/1_Quick Rides, Easy on the Pocket.jpg";
+import AboutImg2 from "../assets/Images for Website with Titles/2_Quick Rides, Easy on the Pocket.jpg";
+import JobsBgImg from "../assets/Images for Website with Titles/Careers Page.png";
 
 function About() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
     return (
         <div className="font-sans text-gray-800 bg-white">
-            {/* Header - Consistent with other pages but About active */}
-            <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-white sticky top-0 z-50">
-                <div className="flex items-center">
-                    {/* Logo Image */}
-                    <img src={GenzoLogo} alt="Genzo Logo" className="h-24 md:h-28 w-auto object-contain" />
-                </div>
-                <nav className="hidden md:flex items-center space-x-12 text-base font-medium text-gray-800">
-                    <a href="/" className="hover:text-[#FF8C00] transition-colors">Home</a>
-                    <a href="/about" className="text-black font-bold border-b-2 border-[#FFE755] pb-1">About Us</a>
-                    <a href="/safety" className="hover:text-[#FF8C00] transition-colors">Safety</a>
-                    <a href="/careers" className="hover:text-[#FF8C00] transition-colors">Careers</a>
-                    <a href="/blog" className="hover:text-[#FF8C00] transition-colors">Blog</a>
-                    <a href="/press" className="hover:text-[#FF8C00] transition-colors">Press</a>
-                    <a href="/contact" className="hover:text-[#FF8C00] transition-colors">Contact Us</a>
-                </nav>
-                <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="hidden md:block bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-[#333] transition-colors border border-transparent hover:border-[#FFE755]"
-                >
-                    Download App
-                </button>
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-2xl p-2 text-gray-800 focus:outline-none"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    <span role="img" aria-label="menu">{isMobileMenuOpen ? '✕' : '☰'}</span>
-                </button>
-            </header>
-
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-white pt-36 px-6 md:hidden">
-                    <nav className="flex flex-col space-y-6 text-xl font-medium text-gray-800">
-                        <a href="/" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-                        <a href="/about" className="text-black font-bold border-b-2 border-black pb-1 w-fit" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-                        <a href="/safety" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Safety</a>
-                        <a href="/careers" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
-                        <a href="/blog" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</a>
-                        <a href="/press" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Press</a>
-                        <a href="/contact" className="hover:text-yellow-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
-                        <button
-                            onClick={() => {
-                                setIsModalOpen(true);
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors shadow-lg w-full"
-                        >
-                            Download App
-                        </button>
-                    </nav>
-                </div>
-            )}
+            <Header />
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16 relative overflow-hidden">
@@ -202,7 +145,7 @@ function About() {
                     <p className="text-black text-xl mb-10 font-light">
                         Join us in exploring a world of endless opportunities. Let's find a spot for you.
                     </p>
-                    <button className="bg-black text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#333] transition-transform transform hover:scale-105">
+                    <button className="bg-[#FFBC00] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-transform transform hover:scale-105 shadow-xl">
                         Work with us
                     </button>
                 </div>
@@ -210,8 +153,6 @@ function About() {
 
             {/* Footer */}
             <Footer />
-
-            <DownloadAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 }

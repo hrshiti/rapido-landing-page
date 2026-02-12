@@ -1,0 +1,102 @@
+Genzo Privacy Policy
+Last Updated: [Insert Date]
+Genzo (“Genzo”, “we”, “us”, or “our”) is committed to protecting the privacy of its users and service partners. This Privacy Policy explains how we collect, use, share, and protect information when you use the Genzo mobile application, website www.genzoride.com , and related services (collectively, the “Platform”).
+This Policy applies to Riders/Users, Drivers/Pilots, and anyone who accesses or uses the Platform.
+
+1. Information We Collect
+We collect information necessary to provide reliable, efficient, and secure mobility and delivery services.
+1.1 Information You Provide
+Name, phone number, email address
+Profile photograph
+Payment-related information (processed through third-party payment gateways)
+Government-issued identification (for Drivers/Pilots)
+Vehicle, license, and permit details (for Drivers/Pilots)
+Communications with Genzo customer support
+1.2 Information Collected Automatically
+Location data, including pickup and drop-off points, routes, and trip status
+Device information such as IP address, device type, operating system, and app version
+App usage data, logs, and diagnostic information
+Date, time, and duration of rides or deliveries
+1.3 Information from Third Parties
+Identity and background verification partners
+Payment service providers
+Technology partners supporting platform functionality
+
+2. How We Use Your Information
+Genzo uses personal information to:
+Provide, operate, and improve the Platform
+Match Riders with Drivers/Pilots
+Process payments, refunds, and incentives
+Monitor service quality and prevent fraud or misuse
+Provide customer support and respond to queries
+Communicate important service-related updates
+Comply with legal, regulatory, and governmental requirements
+
+3. Location Information & Background Location Access
+Genzo collects real-time location data to enable ride bookings, navigation, delivery tracking, pricing, and service optimization.
+Location data may be collected even when the app is running in the background, subject to the permissions you grant on your device. This allows features such as live trip tracking, route accuracy, and service availability.
+You may manage or revoke location permissions through your device settings; however, limiting location access may affect Platform functionality.
+
+4. Cookies and Similar Technologies
+Genzo uses cookies and similar technologies on its website www.genzoride.com to:
+Improve website functionality and performance
+Understand user interactions and usage trends
+Enhance user experience
+You may control cookie preferences through your browser settings. Disabling cookies may affect certain website features.
+
+5. Information Sharing and Disclosure
+Genzo does not sell personal information.
+Information may be shared only as necessary:
+Between Riders and Drivers/Pilots to complete rides or deliveries
+With third-party service providers supporting payments, verification, analytics, or customer support
+With law enforcement or government authorities when required by law
+In connection with business restructuring, merger, or acquisition
+All third parties are contractually required to protect personal information and use it solely for authorized purposes.
+
+6. Data Security
+We implement reasonable administrative, technical, and physical safeguards to protect personal information against unauthorized access, loss, misuse, or alteration.
+While we strive to protect your data, no system can guarantee absolute security.
+
+7. Data Retention
+Genzo retains personal information only for as long as necessary to:
+Provide services
+Comply with legal and regulatory obligations
+Resolve disputes
+Enforce agreements
+When data is no longer required, it is securely deleted or anonymized.
+
+8. Your Rights and Choices
+Subject to applicable laws, you may:
+Access and update your personal information
+Request account deletion (subject to legal retention requirements)
+Withdraw consent where applicable
+Requests can be made through the app or by contacting Genzo support.
+
+9. Drivers / Pilots Specific Information
+Drivers/Pilots acknowledge that certain information—such as name, photograph, vehicle details, and approximate location—may be visible to Riders for service fulfillment and transparency.
+Genzo may monitor trip activity, ratings, and performance metrics to maintain service quality and platform integrity.
+
+10. Children’s Privacy
+The Platform is not intended for individuals under 18 years of age. Genzo does not knowingly collect personal information from minors.
+
+11. Grievance Officer (India – DPDP Act, 2023)
+In accordance with applicable data protection laws in India, Genzo has appointed a Grievance Officer to address concerns related to personal data.
+Grievance Officer: Rohan Bhardwaj
+Email: official@genzoride.com
+Address: Genzo, Shimla Bypass Rd, BuddiChowk, Dehradun, Uttarakhand 248007
+Users may contact the Grievance Officer for any concerns regarding data processing or privacy-related issues.
+
+12. Changes to This Privacy Policy
+Genzo may update this Privacy Policy from time to time. Updates will be communicated through the Platform or other appropriate means. Continued use of the Platform constitutes acceptance of the revised Policy.
+
+13. Contact Us
+For questions, concerns, or requests regarding this Privacy Policy, you may contact us at:
+Email: support@genzoride.com
+Address: Genzo, Shimla Bypass Rd, Buddi Chowk, Dehradun, Uttarakhand 248007
+
+
+
+
+
+
+

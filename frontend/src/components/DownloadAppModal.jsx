@@ -1,6 +1,7 @@
 
 import React from 'react';
-import GenzoLogo from '../assets/GenzoLogo-removebg-preview.png'; // Adjust path if needed
+import GenzoLogo from '../assets/Genzo Logo.png';
+import GenzoPilotLogo from '../assets/Genzo Pilot Logo.png';
 
 const DownloadAppModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -16,11 +17,11 @@ const DownloadAppModal = ({ isOpen, onClose }) => {
                 </button>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 py-8">
-                    {/* Captain Section */}
+                    {/* Pilot Section */}
                     <div className="flex flex-col items-center">
-                        <h3 className="text-2xl font-semibold mb-6">Captain App Download</h3>
-                        <div className="w-32 h-32 border-4 border-yellow-400 rounded-full flex items-center justify-center mb-4 p-2">
-                            <img src={GenzoLogo} alt="Genzo Captain" className="w-full h-full object-contain rounded-full mix-blend-multiply" />
+                        <h3 className="text-2xl font-semibold mb-6">Pilot App Download</h3>
+                        <div className="w-32 h-32 border-4 border-[#FFBC00] rounded-full flex items-center justify-center mb-4 p-2">
+                            <img src={GenzoPilotLogo} alt="Genzo Pilot" className="w-full h-full object-contain rounded-full mix-blend-multiply" />
                         </div>
                         <p className="text-gray-500 font-medium">Android</p>
                     </div>
@@ -31,7 +32,7 @@ const DownloadAppModal = ({ isOpen, onClose }) => {
                     {/* Customer Section */}
                     <div className="flex flex-col items-center">
                         <h3 className="text-2xl font-semibold mb-6">Customer App Download</h3>
-                        <div className="w-32 h-32 bg-yellow-400 rounded-2xl flex items-center justify-center mb-4 p-2 shadow-sm">
+                        <div className="w-32 h-32 bg-[#FFBC00] rounded-2xl flex items-center justify-center mb-4 p-2 shadow-sm">
                             <img src={GenzoLogo} alt="Genzo Customer" className="w-full h-full object-contain mix-blend-multiply" />
                         </div>
                         <p className="text-gray-500 font-medium">Android/iOS</p>

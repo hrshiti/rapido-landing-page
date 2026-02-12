@@ -1,0 +1,97 @@
+Genzo Terms & Conditions
+Last Updated: [Insert Date]
+These Terms and Conditions (“Terms”) govern your use of the Genzo Platform, including the mobile application, website www.genzoride.com and any services offered by Genzo (“Genzo”, “we”, “us” or “our”), whether as a rider/passenger (“Rider”) or as a driver/partner (“Driver/Pilot”) (collectively, “User(s)”). By accessing or using the Genzo Platform or services, you agree to be bound by these Terms.
+
+1. Definitions
+“Platform” means the Genzo mobile app, website www.genzoride.com or any interface designed by Genzo to enable Riders and Drivers to access services.
+“Services” means any ride-hailing (bike, taxi, auto), delivery, parcel transport or related services facilitated by the Platform.
+“Driver/Pilot” means an independent third-party service provider who has registered with Genzo to provide Services using a vehicle.
+“Rider” means a person who books Services on the Genzo Platform.
+“Booking” means a request placed by a Rider for an available Driver to provide Services.
+
+2. Acceptance of Terms
+By registering for or using the Platform or Services, you agree to these Terms and to Genzo’s Privacy Policy, including any updates we may make from time to time. If you do not agree to the Terms, you must not access or use the Platform.
+
+3. Eligibility and Registration
+3.1 Rider Eligibility
+Riders must be at least 18 years old.
+Riders must provide accurate personal information.
+Riders are responsible for maintaining account confidentiality.
+3.2 Driver/Pilot Eligibility
+Drivers must be at least 18 years old.
+Drivers must provide accurate personal, vehicle and licence information.
+Drivers must comply with applicable local laws and possess valid licences, registration, insurance, permits and any certifications as required for the Services.
+Drivers must undergo any verification or onboarding process required by Genzo, including background checks or document validation.
+
+4. Use of the Platform
+Genzo provides a technology platform to connect Riders with Drivers; Genzo does not directly provide transportation or delivery services.
+Acceptance of a Booking by a Driver creates a direct engagement between the Rider and the Driver, subject to these Terms.
+Drivers have discretion to accept or reject Booking requests.
+Genzo may provide trip details, including Driver identity and contact information, to Riders once a Booking is accepted.
+
+5. Rider Responsibilities
+Riders agree to treat Drivers with respect.
+Riders shall not request Services to transport illegal, hazardous or prohibited items.
+Riders shall pay the fare, taxes, tolls, surcharges and any applicable fees associated with the Service as shown on the Platform.
+Riders must arrive at the designated pickup point on time.
+
+6. Driver/Pilot Responsibilities
+Drivers must comply with all road and traffic laws.
+Drivers shall maintain their vehicles in safe operating condition.
+Drivers shall not consume alcohol or drugs before or while providing Services.
+Drivers must comply with any training or verification requirements that Genzo may specify.
+Drivers shall not use the Platform for unlawful purposes.
+
+7. Fares and Payments
+Fare rates, including base fare, per-kilometre charges, surge pricing and additional charges, will be displayed on the Platform.
+Riders may pay through available payment methods in the app or as permitted by Genzo.
+Drivers agree that fares may be collected by Genzo on their behalf, and payouts shall be made in accordance with the payout terms displayed on the Platform.
+Genzo may charge service fees, convenience fees or commissions in accordance with pricing displayed on the Platform.
+All payments are final unless otherwise refunded under Genzo’s refund policies.
+
+8. Cancellation and No-Show Policies
+Riders may cancel a Booking subject to the cancellation terms shown in the app.
+Drivers may cancel accepted bookings under conditions permitted by Genzo.
+Cancelled services may attract cancellation fees as indicated in the Platform.
+
+9. Insurance and Liability
+Genzo may provide limited insurance coverage, where required by law or displayed on the Platform. Terms of such coverage (including eligibility, claims, limits and exclusions) will be provided separately.
+Genzo is not responsible for personal injuries or property damage arising from a ride or delivery, except to the extent required under applicable law.
+Genzo is not liable for loss, theft, or damage to items in a Rider’s possession during a service.
+Drivers and Riders agree to indemnify Genzo against claims arising from their misuse of the Platform or violation of these Terms.
+
+10. Ratings and Reviews
+Genzo may use ratings and feedback to evaluate Drivers and Riders.
+Users agree not to post defamatory, abusive or false reviews.
+
+11. Intellectual Property
+Genzo owns all rights to the Platform, trademarks, content, images, text and software.
+Users are granted a limited licence to use the Platform solely to access services.
+Users shall not copy, distribute, reverse engineer, create derivative works or otherwise misuse Genzo intellectual property.
+
+12. Safety, Security and Conduct
+Users agree to conduct themselves respectfully and lawfully.
+Genzo may suspend or deactivate accounts that violate these Terms or engage in harmful conduct.
+Drivers and Riders must comply with applicable safety practices.
+
+13. Third-Party Content
+The Platform may contain links to third-party services; Genzo is not responsible for third-party content, policies or practices.
+Riders and Drivers use third-party services at their own risk.
+
+14. Term and Termination
+These Terms remain in effect until terminated.
+Genzo may suspend, restrict or terminate access to the Platform or Services at any time, without notice, for violation of these Terms or for other business reasons.
+Riders and Drivers may deactivate their accounts at any time through the app.
+
+15. Governing Law and Dispute Resolution
+These Terms are governed by the laws of India.
+Any disputes shall be resolved amicably in good faith, and failing that, through arbitration in Dehradun, Uttarakhand, India, under the Arbitration and Conciliation Act, 1996.
+The seat of arbitration shall be Dehradun, the language shall be English.
+
+16. Amendments
+Genzo may update or modify these Terms from time to time. Updates will be effective upon posting on the Platform. Continued use of the Platform constitutes acceptance of updated Terms.
+
+17. Contact Information
+For questions about these Terms, please contact us at:
+Email: support@genzoride.com
+Address: Genzo, Shimla Bypass Rd, Buddi Chowk, Dehradun, Uttarakhand 248007

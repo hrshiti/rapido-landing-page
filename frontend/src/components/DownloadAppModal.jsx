@@ -32,8 +32,8 @@ const DownloadAppModal = ({ isOpen, onClose }) => {
                     {/* Customer Section */}
                     <div className="flex flex-col items-center">
                         <h3 className="text-2xl font-semibold mb-6">Customer App Download</h3>
-                        <div className="w-32 h-32 bg-[#FFBC00] rounded-2xl flex items-center justify-center mb-4 p-2 shadow-sm">
-                            <img src={GenzoLogo} alt="Genzo Customer" className="w-full h-full object-contain mix-blend-multiply" />
+                        <div className="w-32 h-32 bg-[#FFBC00] rounded-[2rem] flex items-center justify-center mb-4 p-2 shadow-sm">
+                            <img src={GenzoLogo} alt="Genzo Customer" className="w-full h-full object-contain mix-blend-multiply rounded-[2rem]" />
                         </div>
                         <p className="text-gray-500 font-medium">Android/iOS</p>
                     </div>

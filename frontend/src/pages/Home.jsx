@@ -209,12 +209,12 @@ function Home() {
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                         {/* App Card 1 */}
                         <div className="flex flex-col items-center">
-                            <img src={Logo} alt="Genzo User App" className="w-24 h-24 object-contain mb-4 rounded-full" />
+                            <img src={Logo} alt="Genzo User App" className="w-24 h-24 object-contain mb-4 rounded-[2rem]" />
                             <p className="text-gray-900 text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
                         </div>
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">
-                            <img src={PilotLogo} alt="Genzo Pilot App" className="w-24 h-24 object-contain mb-4 rounded-full" />
+                            <img src={PilotLogo} alt="Genzo Pilot App" className="w-24 h-24 object-contain mb-4 rounded-[2rem]" />
                             <p className="text-gray-900 text-lg font-bold">Genzo Pilot:<br />Drive & Earn</p>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const Header = () => {
             <header className="flex justify-between items-center px-4 md:px-24 py-2 bg-black sticky top-0 z-50 shadow-sm overflow-hidden">
                 <div className="flex items-center -my-2">
                     <Link to="/">
-                        <img src={Logo} alt="Genzo Logo" className="h-24 md:h-24 w-auto object-contain transform scale-150 relative z-10" />
+                        <img src={Logo} alt="Genzo Logo" className="h-24 md:h-24 w-auto object-contain transform scale-150 relative z-10 rounded-[2rem]" />
                     </Link>
                 </div>
 
@@ -47,7 +47,7 @@ const Header = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-black pt-20 px-6 md:hidden">
+                <div className="fixed inset-0 z-40 bg-black pt-32 px-6 md:hidden">
                     <nav className="flex flex-col space-y-6 text-xl font-medium text-white">
                         <Link to="/" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
                         <Link to="/about" className="hover:text-[#FFBC00] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import DownloadAppModal from './DownloadAppModal';
 
 const Footer = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <footer className="bg-black text-white py-16 border-t border-gray-800">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -11,20 +14,26 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-base">Customer app</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="#" className="w-40 opacity-100 hover:opacity-80 transition-opacity">
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="w-40 opacity-100 hover:opacity-80 transition-opacity text-left"
+                            >
                                 <img
                                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                                     alt="Get it on Google Play"
                                     className="w-full h-auto"
                                 />
-                            </a>
-                            <a href="#" className="w-40 opacity-100 hover:opacity-80 transition-opacity">
+                            </button>
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="w-40 opacity-100 hover:opacity-80 transition-opacity text-left"
+                            >
                                 <img
                                     src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                                     alt="Download on the App Store"
                                     className="w-full h-auto"
                                 />
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -32,13 +41,16 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-6 text-white uppercase tracking-wider text-base">Pilot app</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="#" className="w-40 opacity-100 hover:opacity-80 transition-opacity">
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="w-40 opacity-100 hover:opacity-80 transition-opacity text-left"
+                            >
                                 <img
                                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                                     alt="Get it on Google Play"
                                     className="w-full h-auto"
                                 />
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -85,8 +97,12 @@ const Footer = () => {
                     © 2026 Premium Traders. All rights reserved.
                 </div>
             </div>
+
+            {/* Download App Modal */}
+            <DownloadAppModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </footer>
     );
 };
 
 export default Footer;
+

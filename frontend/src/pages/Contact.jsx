@@ -91,16 +91,7 @@ function Contact() {
 
                     {/* Right Column: Address Info */}
                     <div className="flex-1 relative">
-                        {/* Decorative Dots */}
-                        <div className="absolute -top-10 right-0 opacity-40">
-                            <div className="grid grid-cols-12 gap-2">
-                                {[...Array(72)].map((_, i) => (
-                                    <div key={i} className="w-1 h-1 bg-[#FFBC00] rounded-full"></div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="space-y-8 mt-10 lg:mt-32 max-w-sm ml-auto">
+                        <div className="space-y-8 mt-6 lg:mt-10 max-w-sm ml-auto">
                             <div>
                                 <h3 className="font-bold text-black mb-3 text-lg">Registered Office Address:</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">

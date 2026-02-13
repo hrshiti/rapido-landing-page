@@ -98,7 +98,7 @@ function Home() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-16 text-gray-900 leading-tight">
                         Our Services
                         {/* Orange Underline */}
-                        <div className="h-2 w-16 mt-2 bg-[#FFBC00]"></div>
+                        <div className="h-2 w-16 mt-2 bg-[#FFBC00] rounded-full"></div>
                     </h2>
 
                     {/* 5 columns layout */}
@@ -204,7 +204,7 @@ function Home() {
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
                         Download Now
-                        <div className="h-1 w-20 bg-[#FFE755] mx-auto mt-4 rounded-full"></div>
+                        <div className="h-2 w-20 bg-[#FFBC00] mx-auto mt-4 rounded-full"></div>
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                         {/* App Card 1 */}
@@ -212,7 +212,7 @@ function Home() {
                             <div className="w-28 h-28 border-4 border-black rounded-3xl flex items-center justify-center mb-4 overflow-hidden bg-black">
                                 <img src={Logo} alt="Genzo User App" className="w-full h-full object-cover" />
                             </div>
-                            <p className="text-gray-900 text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
+                            <p className="text-gray-900 text-lg font-bold">Genzo: Bike, Auto,<br />Cabs & Parcel</p>
                         </div>
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">

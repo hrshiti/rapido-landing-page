@@ -22,7 +22,7 @@ function About() {
 
                 {/* Text Section */}
                 <div className="md:w-1/2 z-10">
-                    <div className="inline-block px-4 py-1 rounded-full text-xs font-bold tracking-wider mb-6" style={{ backgroundColor: '#FFE755' }}>Genzo</div>
+                    <div className="inline-block px-4 py-1 rounded-full text-xs font-bold tracking-wider mb-6" style={{ backgroundColor: '#FFBC00' }}>Genzo</div>
 
                     <h1 className="text-3xl md:text-6xl font-extrabold mb-10 text-gray-900 leading-tight">
                         India Loves<br />

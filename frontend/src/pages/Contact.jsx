@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactUsImg from '../assets/Contact Us.jpg';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+    const form = useRef();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey || serviceId === 'your_emailjs_service_id') {
+            alert("EmailJS configuration is missing! Please check emailjs_setup_guide.html and update your .env file.");
+            setIsSubmitting(false);
+            return;
+        }
+
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then((result) => {
+                console.log('Email successfully sent!', result.text);
+                alert("Thank you! Your message has been sent to support@genzoride.com.");
+                form.current.reset();
+                setIsSubmitting(false);
+            }, (error) => {
+                console.error('Failed to send email:', error.text);
+                alert("Failed to send message. Please try again later.");
+                setIsSubmitting(false);
+            });
+    };
+
     return (
         <div className="font-sans text-gray-800 bg-white min-h-screen flex flex-col justify-between">
             <Header />
@@ -17,29 +48,29 @@ function Contact() {
                 <div className="flex flex-col lg:flex-row gap-10 md:gap-20">
                     {/* Left Column: Form */}
                     <div className="flex-1">
-                        <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Form submitted!"); }}>
+                        <form ref={form} className="space-y-6" onSubmit={sendEmail}>
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Name <span className="text-[#FF8C00]">*</span></label>
-                                <input type="text" placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="text" name="name" required placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Email Address <span className="text-[#FF8C00]">*</span></label>
-                                <input type="email" placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="email" name="email" required placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Mobile Number <span className="text-[#FF8C00]">*</span></label>
-                                <input type="tel" placeholder="Enter your mobile number" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="tel" name="mobile" required placeholder="Enter your mobile number" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">You are a <span className="text-[#FF8C00]">*</span></label>
                                 <div className="relative">
-                                    <select className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 appearance-none text-sm">
+                                    <select name="role" required className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 appearance-none text-sm">
                                         <option value="" disabled selected>--select--</option>
-                                        <option value="customer">Customer</option>
-                                        <option value="pilot">Pilot</option>
+                                        <option value="Customer">Customer</option>
+                                        <option value="Pilot">Pilot</option>
                                     </select>
                                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                         <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
@@ -49,18 +80,27 @@ function Contact() {
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Comment <span className="text-[#FF8C00]">*</span></label>
-                                <textarea rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
+                                <textarea name="message" required rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
                             </div>
 
-                            <button type="submit" className="w-full py-3 rounded font-bold text-black bg-[#FFBC00] transition-colors hover:bg-white border border-transparent hover:border-black mt-6 shadow-md">
-                                Submit
+                            <button type="submit" disabled={isSubmitting} className={`w-full py-3 rounded font-bold text-black bg-[#FFBC00] transition-colors border border-transparent shadow-md ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-white hover:border-black'}`}>
+                                {isSubmitting ? 'Sending...' : 'Submit'}
                             </button>
                         </form>
                     </div>
 
                     {/* Right Column: Address Info */}
                     <div className="flex-1 relative">
-                        <div className="space-y-8 mt-10 lg:mt-0 max-w-sm ml-auto">
+                        {/* Decorative Dots */}
+                        <div className="absolute -top-10 right-0 opacity-40">
+                            <div className="grid grid-cols-12 gap-2">
+                                {[...Array(72)].map((_, i) => (
+                                    <div key={i} className="w-1 h-1 bg-[#FFBC00] rounded-full"></div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="space-y-8 mt-10 lg:mt-32 max-w-sm ml-auto">
                             <div>
                                 <h3 className="font-bold text-black mb-3 text-lg">Registered Office Address:</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -77,7 +117,6 @@ function Contact() {
                 </div>
             </main>
 
-            {/* Black Footer */}
             {/* Footer */}
             <Footer />
         </div>

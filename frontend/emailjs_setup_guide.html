@@ -1,0 +1,60 @@
+<h1>EmailJS Setup Guide for Rapido Frontend</h1>
+
+<p>To enable the Contact Form to send emails to <code>support@genzoride.com</code>, follow these steps:</p>
+
+<h2>1. Create an EmailJS Account</h2>
+<ol>
+    <li>Go to <a href="https://www.emailjs.com/">https://www.emailjs.com/</a> and create a free account.</li>
+</ol>
+
+<h2>2. Connect Email Service</h2>
+<ol>
+    <li>In the EmailJS dashboard, go to the <strong>"Email Services"</strong> tab.</li>
+    <li>Click <strong>"Add New Service"</strong>.</li>
+    <li>Select your email provider (e.g., Gmail, Outlook).</li>
+    <li>Connect your account and click <strong>"Create Service"</strong>.</li>
+    <li>Ideally, use the `support@genzoride.com` email account if possible, or any email that you want to send *from*.
+    </li>
+    <li>Copy the <strong>Service ID</strong> (e.g., `service_xc8s9d`) and paste it into your `.env` file as
+        `VITE_EMAILJS_SERVICE_ID`.</li>
+</ol>
+
+<h2>3. Create Email Template</h2>
+<ol>
+    <li>Go to the <strong>"Email Templates"</strong> tab.</li>
+    <li>Click <strong>"Create New Template"</strong>.</li>
+    <li>Set the subject to something like: `New Contact Form Submission from {{name}}`.</li>
+    <li>In the content, use the following variables ensuring they match the `name` attributes in your form input fields:
+        <ul>
+            <li><code>{{name}}</code> - The sender's name</li>
+            <li><code>{{email}}</code> - The sender's email</li>
+            <li><code>{{mobile}}</code> - The sender's phone number</li>
+            <li><code>{{role}}</code> - User role (Customer/Pilot)</li>
+            <li><code>{{message}}</code> - The comment/message</li>
+        </ul>
+    </li>
+    <li>In the "To Email" field on the right, enter: <code>support@genzoride.com</code>.</li>
+    <li>The "From Email" is typically your connected service email.</li>
+    <li>Save the template.</li>
+    <li>Copy the <strong>Template ID</strong> (e.g., `template_8szd7x`) and paste it into your `.env` file as
+        `VITE_EMAILJS_TEMPLATE_ID`.</li>
+</ol>
+
+<h2>4. Get Public Key</h2>
+<ol>
+    <li>Go to the <strong>"Account"</strong> (or your name in the corner) -> <strong>"API Keys"</strong> (or just
+        "Account").</li>
+    <li>Copy the <strong>Public Key</strong> (e.g., `user_8s7d6f87s6d`).</li>
+    <li>Paste it into your `.env` file as `VITE_EMAILJS_PUBLIC_KEY`.</li>
+</ol>
+
+<h2>5. Update .env File</h2>
+<p>Open the `.env` file in your project root and replace the placeholders with your actual IDs:</p>
+<pre>
+VITE_EMAILJS_SERVICE_ID=service_xxxxx
+VITE_EMAILJS_TEMPLATE_ID=template_xxxxx
+VITE_EMAILJS_PUBLIC_KEY=public_xxxxx
+</pre>
+
+<h2>6. Restart Server</h2>
+<p>After updating `.env`, stop the terminal (Ctrl+C) and run `npm run dev` again to load the new variables.</p>

@@ -47,23 +47,23 @@ function About() {
                 </div>
 
                 {/* Image Section */}
-                <div className="md:w-1/2 relative h-[400px] md:h-[600px] w-full flex items-center justify-center">
+                <div className="md:w-1/2 relative min-h-[500px] md:h-[600px] w-full flex flex-col md:block items-center justify-center gap-6 md:gap-0 mt-10 md:mt-0">
                     {/* Organic Background Shape - Creamy Yellow */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-[#FFFBEB] rounded-[4rem] -z-10 rotate-12"></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[120%] bg-[#FFFBEB] rounded-[4rem] -z-10 rotate-12 hidden md:block"></div>
 
                     {/* Image 1: Woman on Bike (Top Left) */}
-                    <div className="absolute top-0 left-0 w-72 h-72 rounded-[3rem] overflow-hidden border-4 border-white shadow-xl z-10 transform -rotate-3">
+                    <div className="relative md:absolute top-auto left-auto md:top-0 md:left-0 w-64 h-64 md:w-72 md:h-72 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-white shadow-xl z-10 transform md:-rotate-3 mx-auto">
                         <img src={AboutImg1} alt="Rider" className="w-full h-full object-cover" />
                     </div>
 
                     {/* Image 2: Man with Phone (Bottom Right) */}
-                    <div className="absolute bottom-10 right-10 w-72 h-96 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl z-20">
+                    <div className="relative md:absolute bottom-auto right-auto md:bottom-10 md:right-10 w-64 h-80 md:w-72 md:h-96 rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl z-20 mx-auto">
                         <img src={AboutImg2} alt="Customer" className="w-full h-full object-cover" />
                     </div>
 
                     {/* Small yellow decorative pill/shape */}
-                    <div className="absolute bottom-20 left-20 w-16 h-48 rounded-full z-0" style={{ backgroundColor: '#FFE755' }}></div>
-                    <div className="absolute top-20 right-20 w-32 h-16 rounded-full bg-white z-0"></div>
+                    <div className="absolute bottom-20 left-20 w-16 h-48 rounded-full z-0 hidden md:block" style={{ backgroundColor: '#FFE755' }}></div>
+                    <div className="absolute top-20 right-20 w-32 h-16 rounded-full bg-white z-0 hidden md:block"></div>
                 </div>
             </main>
 

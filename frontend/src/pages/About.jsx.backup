@@ -31,16 +31,16 @@ function About() {
 
                     <div className="space-y-8 max-w-lg">
                         <div>
-                            <h3 className="text-xl font-bold text-gray-600 mb-2">We're not just an option — we're a reliable way to move.</h3>
+                            <h3 className="text-xl font-bold text-gray-600 mb-2">We are not an option, we are a choice</h3>
                             <p className="text-gray-500 leading-relaxed text-lg">
-                                Genzo exists to solve everyday intra-city commuting challenges with safe, affordable rides designed for real city life. With assured safety and pocket-friendly pricing, we make daily travel simpler and smarter.
+                                We're #1 choice of 10 Million people because we're the solution of India's intra-city commuting problems. With assured safety, we also provide economically priced rides.
                             </p>
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2">What sets us apart?</h3>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">What makes us different?</h3>
                             <p className="text-gray-500 leading-relaxed text-lg">
-                                Our bike taxis cut through peak-hour traffic to get you where you need to be, fast and hassle-free. When it comes to city travel, think practical. Think Genzo.
+                                Our bike taxis can dodge the traffic during peak hours and get you to the destination in a jiffy! So when you think travel, think Genzo.
                             </p>
                         </div>
                     </div>
@@ -67,6 +67,50 @@ function About() {
                 </div>
             </main>
 
+            {/* Champions Section */}
+            <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+                {/* Background Large Blob - Left Side */}
+                <div className="absolute top-1/2 left-0 w-1/2 h-full bg-[#FFFBEB] -z-10 rounded-r-[15rem] -translate-y-1/2 -translate-x-1/4 scale-125"></div>
+
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
+
+                    {/* Text Content */}
+                    <div className="w-full text-center max-w-4xl mx-auto">
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-8 text-gray-900 leading-tight">
+                            Champions of our<br /> success story
+                        </h2>
+                        <div className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed space-y-6">
+                            <p>
+                                Genzo has come a long way ever since its inception in 2026. With a lot of hardwork and perseverance we have made a place for ourselves in the market.
+                            </p>
+                            <p>
+                                As a brand and as a service, it is our constant endeavour to redefine ourselves.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Jobs Section */}
+            <section className="relative py-16 md:py-32 bg-[#FFE755] overflow-hidden">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img src={JobsBgImg} alt="Office" className="w-full h-full object-cover grayscale opacity-20" />
+                    <div className="absolute inset-0 bg-[#FFE755] opacity-90 mix-blend-multiply"></div>
+                </div>
+
+                <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+                    <h2 className="text-3xl md:text-6xl font-light text-black mb-6 tracking-wide">
+                        Jobs @ Genzo
+                    </h2>
+                    <p className="text-black text-xl mb-10 font-light">
+                        Join us in exploring a world of endless opportunities. Let's find a spot for you.
+                    </p>
+                    <Link to="/careers" className="bg-[#FFBC00] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-transform transform hover:scale-105 shadow-xl inline-block">
+                        Work with us
+                    </Link>
+                </div>
+            </section>
 
             {/* Footer */}
             <Footer />

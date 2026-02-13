@@ -20,8 +20,8 @@ const DownloadAppModal = ({ isOpen, onClose }) => {
                     {/* Pilot Section */}
                     <div className="flex flex-col items-center">
                         <h3 className="text-2xl font-semibold mb-6">Pilot App Download</h3>
-                        <div className="w-32 h-32 border-4 border-[#FFBC00] rounded-full flex items-center justify-center mb-4 p-2">
-                            <img src={GenzoPilotLogo} alt="Genzo Pilot" className="w-full h-full object-contain rounded-full mix-blend-multiply" />
+                        <div className="w-32 h-32 border-4 border-black rounded-3xl flex items-center justify-center mb-4 overflow-hidden bg-black">
+                            <img src={GenzoPilotLogo} alt="Genzo Pilot" className="w-full h-full object-cover" />
                         </div>
                         <p className="text-gray-500 font-medium">Android</p>
                     </div>
@@ -32,8 +32,8 @@ const DownloadAppModal = ({ isOpen, onClose }) => {
                     {/* Customer Section */}
                     <div className="flex flex-col items-center">
                         <h3 className="text-2xl font-semibold mb-6">Customer App Download</h3>
-                        <div className="w-32 h-32 bg-[#FFBC00] rounded-[2rem] flex items-center justify-center mb-4 p-2 shadow-sm">
-                            <img src={GenzoLogo} alt="Genzo Customer" className="w-full h-full object-contain mix-blend-multiply rounded-[2rem]" />
+                        <div className="w-32 h-32 border-4 border-black rounded-3xl flex items-center justify-center mb-4 overflow-hidden bg-black">
+                            <img src={GenzoLogo} alt="Genzo Customer" className="w-full h-full object-cover" />
                         </div>
                         <p className="text-gray-500 font-medium">Android/iOS</p>
                     </div>

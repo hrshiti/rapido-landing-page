@@ -105,8 +105,8 @@ function Home() {
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
                         {services.map((service, index) => (
                             <div key={index} className="flex flex-col items-center group cursor-pointer transition-all hover:-translate-y-1">
-                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-3 hover:border-[#FFBC00]">
-                                    <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply" />
+                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-1 hover:border-[#FFBC00] overflow-hidden">
+                                    <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply transform scale-125" />
                                 </div>
                                 <span className="text-xl font-bold text-gray-900 text-center">{service.name}</span>
                             </div>
@@ -209,12 +209,16 @@ function Home() {
                     <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                         {/* App Card 1 */}
                         <div className="flex flex-col items-center">
-                            <img src={Logo} alt="Genzo User App" className="w-24 h-24 object-contain mb-4 rounded-[2rem]" />
+                            <div className="w-28 h-28 border-4 border-black rounded-3xl flex items-center justify-center mb-4 overflow-hidden bg-black">
+                                <img src={Logo} alt="Genzo User App" className="w-full h-full object-cover" />
+                            </div>
                             <p className="text-gray-900 text-lg font-bold">Genzo: Bike-Taxi,<br />Auto & Cabs</p>
                         </div>
                         {/* App Card 2 */}
                         <div className="flex flex-col items-center">
-                            <img src={PilotLogo} alt="Genzo Pilot App" className="w-24 h-24 object-contain mb-4 rounded-[2rem]" />
+                            <div className="w-28 h-28 border-4 border-black rounded-3xl flex items-center justify-center mb-4 overflow-hidden bg-black">
+                                <img src={PilotLogo} alt="Genzo Pilot App" className="w-full h-full object-cover" />
+                            </div>
                             <p className="text-gray-900 text-lg font-bold">Genzo Pilot:<br />Drive & Earn</p>
                         </div>
                     </div>

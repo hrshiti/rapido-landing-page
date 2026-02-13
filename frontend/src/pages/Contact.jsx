@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ContactUsImg from '../assets/Contact Us.jpg';
 
 function Contact() {
     return (
@@ -59,16 +60,7 @@ function Contact() {
 
                     {/* Right Column: Address Info */}
                     <div className="flex-1 relative">
-                        {/* Decorative Dots */}
-                        <div className="absolute -top-10 right-0 opacity-40">
-                            <div className="grid grid-cols-12 gap-2">
-                                {[...Array(72)].map((_, i) => (
-                                    <div key={i} className="w-1 h-1 bg-[#FFBC00] rounded-full"></div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="space-y-12 mt-10 lg:mt-32 max-w-sm ml-auto">
+                        <div className="space-y-8 mt-10 lg:mt-0 max-w-sm ml-auto">
                             <div>
                                 <h3 className="font-bold text-black mb-3 text-lg">Registered Office Address:</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -76,18 +68,9 @@ function Contact() {
                                 </p>
                             </div>
 
-                            <div>
-                                <h3 className="font-bold text-black mb-3 text-lg">City Office:</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                    Genzo Transportation Services Pvt Ltd, #148, 1st Floor, SLV Nilaya, 5th Main 80ft road, HSR Layout 7th Sector, Bangalore 560102.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="font-bold text-black mb-3 text-lg">Corporate Office:</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                    Mantri Commercio - Spatium Tower A, Sy No 51/2, 51/3, 51/4, Of Devarabeesanahalli Village And Hjem 39/5 Of Kariyammana Agrahara Village Varthur Hobli, Bangalore East Taluk, Bangalore.
-                                </p>
+                            {/* Contact Us Image */}
+                            <div className="rounded-3xl overflow-hidden shadow-lg">
+                                <img src={ContactUsImg} alt="Contact Us" className="w-full h-auto object-cover" />
                             </div>
                         </div>
                     </div>

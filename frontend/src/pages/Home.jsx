@@ -7,11 +7,11 @@ import '../App.css';
 import Footer from '../components/Footer';
 import Logo from '../assets/Genzo Logo.png';
 import PilotLogo from '../assets/Genzo Pilot Logo.png';
-import BikeIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Bike.png';
-import AutoIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Auto Rickshaw.png';
-import ERickshawIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/eRickshaw.png';
-import ParcelIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Parcel.png';
-import TaxiIcon from '../assets/Icons-20260210T052952Z-3-001/Icons/Taxi.png';
+import BikeIcon from '../assets/Updated Icons/1_Bike.png';
+import AutoIcon from '../assets/Updated Icons/2_AutoRickshaw.png';
+import ERickshawIcon from '../assets/Updated Icons/3_E-Rickshaw.png';
+import TaxiIcon from '../assets/Updated Icons/4_Taxi.png';
+import ParcelIcon from '../assets/Updated Icons/5_Parcel.png';
 
 // Import downloaded images
 import Ride1 from "../assets/Images for Website with Titles/1_Quick Rides, Easy on the Pocket.jpg";

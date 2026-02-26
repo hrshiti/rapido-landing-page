@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DownloadAppModal from '../components/DownloadAppModal';
 import Header from '../components/Header';
 import '../App.css';
+import { useGoogleMapsScript } from '../hooks/useGoogleMapsScript';
+import { submitWebbookingStore } from '../services/webbookingApi';
 
 // Importing assets
 import Footer from '../components/Footer';
@@ -22,10 +24,125 @@ import Driver1 from "../assets/Images for Website with Titles/1_Log In Anytime. 
 import Driver2 from "../assets/Images for Website with Titles/2_Log In Anytime. Earn Anytime.jpg";
 import SafetyImg from "../assets/Images for Website with Titles/Everyones Safety Matters.jpg";
 
+/** Format YYYY-MM-DD to DD-MM-YYYY for API */
+function formatDateForApi(dateStr) {
+    if (!dateStr) return '';
+    const [y, m, d] = dateStr.split('-');
+    return d && m && y ? `${d}-${m}-${y}` : dateStr;
+}
+
 function Home() {
-    const [pickup, setPickup] = useState('');
-    const [drop, setDrop] = useState('');
+    const [pickupLocation, setPickupLocation] = useState('');
+    const [pickupLat, setPickupLat] = useState('');
+    const [pickupLng, setPickupLng] = useState('');
+    const [dropoffLocation, setDropoffLocation] = useState('');
+    const [dropoffLat, setDropoffLat] = useState('');
+    const [dropoffLng, setDropoffLng] = useState('');
+    const [pickupDate, setPickupDate] = useState('');
+    const [pickupTime, setPickupTime] = useState('');
+    const [name, setName] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [submitSuccess, setSubmitSuccess] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const pickupInputRef = useRef(null);
+    const dropInputRef = useRef(null);
+    const { isLoaded: mapsLoaded, error: mapsError } = useGoogleMapsScript();
+
+    useEffect(() => {
+        if (!mapsLoaded || !window.google?.maps?.places) return;
+        const pickupEl = pickupInputRef.current;
+        const dropEl = dropInputRef.current;
+        if (!pickupEl || !dropEl) return;
+
+        const options = { types: ['establishment', 'geocode'] };
+        const pickupAutocomplete = new window.google.maps.places.Autocomplete(pickupEl, options);
+        const dropAutocomplete = new window.google.maps.places.Autocomplete(dropEl, options);
+
+        const onPickupPlace = () => {
+            const place = pickupAutocomplete.getPlace();
+            if (place?.formatted_address) setPickupLocation(place.formatted_address);
+            else if (place?.name) setPickupLocation(place.name);
+            if (place?.geometry?.location) {
+                setPickupLat(String(place.geometry.location.lat()));
+                setPickupLng(String(place.geometry.location.lng()));
+            }
+        };
+        const onDropPlace = () => {
+            const place = dropAutocomplete.getPlace();
+            if (place?.formatted_address) setDropoffLocation(place.formatted_address);
+            else if (place?.name) setDropoffLocation(place.name);
+            if (place?.geometry?.location) {
+                setDropoffLat(String(place.geometry.location.lat()));
+                setDropoffLng(String(place.geometry.location.lng()));
+            }
+        };
+
+        pickupAutocomplete.addListener('place_changed', onPickupPlace);
+        dropAutocomplete.addListener('place_changed', onDropPlace);
+        return () => {
+            window.google.maps.event.clearInstanceListeners(pickupAutocomplete);
+            window.google.maps.event.clearInstanceListeners(dropAutocomplete);
+        };
+    }, [mapsLoaded]);
+
+    const handleSubmit = async (e) => {
+        e?.preventDefault?.();
+        setSubmitError('');
+        setSubmitSuccess(false);
+
+        const trimmedName = name.trim();
+        const trimmedMobile = mobileNumber.trim();
+        if (!pickupLocation.trim()) {
+            setSubmitError('Please enter pickup location.');
+            return;
+        }
+        if (!dropoffLocation.trim()) {
+            setSubmitError('Please enter drop location.');
+            return;
+        }
+        if (!pickupDate) {
+            setSubmitError('Please select pickup date.');
+            return;
+        }
+        if (!pickupTime) {
+            setSubmitError('Please select pickup time.');
+            return;
+        }
+        if (!trimmedName) {
+            setSubmitError('Please enter your name.');
+            return;
+        }
+        if (!trimmedMobile) {
+            setSubmitError('Please enter your mobile number.');
+            return;
+        }
+
+        setIsSubmitting(true);
+        const payload = {
+            pickup_location: pickupLocation.trim(),
+            dropoff_location: dropoffLocation.trim(),
+            pickup_date: formatDateForApi(pickupDate),
+            pickup_time: pickupTime,
+            name: trimmedName,
+            mobile_number: trimmedMobile,
+            pickup_lat: pickupLat || '',
+            pickup_lang: pickupLng || '',
+            dropoff_lat: dropoffLat || '',
+            dropoff_lang: dropoffLng || '',
+        };
+        const result = await submitWebbookingStore(payload);
+        setIsSubmitting(false);
+
+        if (result.ok) {
+            setSubmitSuccess(true);
+            setIsModalOpen(true);
+        } else {
+            setSubmitError(result.error || 'Booking request failed. Please try again.');
+        }
+    };
 
     const services = [
         { name: 'Bike', icon: BikeIcon },
@@ -53,42 +170,119 @@ function Home() {
                         Ride Anywhere. Genzo Everywhere.
                     </h1>
 
-                    <div className="w-full mx-auto flex flex-col gap-5 max-w-2xl">
-                        {/* Pickup Input Card */}
+                    <form onSubmit={handleSubmit} className="w-full mx-auto flex flex-col gap-5 max-w-2xl">
+                        {mapsError && (
+                            <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2">
+                                {mapsError} Location suggestions may not work.
+                            </p>
+                        )}
+                        {submitError && (
+                            <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2" role="alert">
+                                {submitError}
+                            </p>
+                        )}
+                        {submitSuccess && (
+                            <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-2" role="status">
+                                Booking request sent. We will contact you shortly.
+                            </p>
+                        )}
+
+                        {/* Pickup */}
                         <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex items-center px-6 py-4 hover:shadow-md transition-shadow">
-                            <div className="text-gray-900 text-xl mr-5">
+                            <div className="text-gray-900 text-xl mr-5 shrink-0">
                                 <div className="w-2 h-2 rounded-full bg-black"></div>
                             </div>
                             <input
+                                ref={pickupInputRef}
                                 type="text"
                                 placeholder="Enter Pickup Location"
-                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal"
-                                value={pickup}
-                                onChange={(e) => setPickup(e.target.value)}
+                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal bg-transparent"
+                                value={pickupLocation}
+                                onChange={(e) => setPickupLocation(e.target.value)}
+                                autoComplete="off"
+                                aria-label="Pickup location"
                             />
                         </div>
 
-                        {/* Drop Input Card */}
+                        {/* Drop */}
                         <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex items-center px-6 py-4 hover:shadow-md transition-shadow">
-                            <div className="text-gray-900 text-xl mr-5">
+                            <div className="text-gray-900 text-xl mr-5 shrink-0">
                                 <div className="w-2 h-2 rounded-full border-2 border-black"></div>
                             </div>
                             <input
+                                ref={dropInputRef}
                                 type="text"
                                 placeholder="Enter Drop Location"
-                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal"
-                                value={drop}
-                                onChange={(e) => setDrop(e.target.value)}
+                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal bg-transparent"
+                                value={dropoffLocation}
+                                onChange={(e) => setDropoffLocation(e.target.value)}
+                                autoComplete="off"
+                                aria-label="Drop location"
                             />
                         </div>
 
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
+                                <label htmlFor="pickup-date" className="block text-xs text-gray-500 mb-1">Pickup Date</label>
+                                <input
+                                    id="pickup-date"
+                                    type="date"
+                                    className="w-full text-gray-700 outline-none font-normal min-h-8"
+                                    value={pickupDate}
+                                    onChange={(e) => setPickupDate(e.target.value)}
+                                    min={new Date().toISOString().split('T')[0]}
+                                    aria-label="Pickup date"
+                                />
+                            </div>
+                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
+                                <label htmlFor="pickup-time" className="block text-xs text-gray-500 mb-1">Pickup Time</label>
+                                <input
+                                    id="pickup-time"
+                                    type="time"
+                                    className="w-full text-gray-700 outline-none font-normal min-h-8"
+                                    value={pickupTime}
+                                    onChange={(e) => setPickupTime(e.target.value)}
+                                    aria-label="Pickup time"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
+                                <label htmlFor="booking-name" className="block text-xs text-gray-500 mb-1">Your Name</label>
+                                <input
+                                    id="booking-name"
+                                    type="text"
+                                    placeholder="Name"
+                                    className="w-full text-gray-700 outline-none placeholder-gray-400 font-normal"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    aria-label="Your name"
+                                />
+                            </div>
+                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
+                                <label htmlFor="booking-mobile" className="block text-xs text-gray-500 mb-1">Mobile Number</label>
+                                <input
+                                    id="booking-mobile"
+                                    type="tel"
+                                    placeholder="10-digit mobile"
+                                    className="w-full text-gray-700 outline-none placeholder-gray-400 font-normal"
+                                    value={mobileNumber}
+                                    onChange={(e) => setMobileNumber(e.target.value)}
+                                    maxLength={15}
+                                    aria-label="Mobile number"
+                                />
+                            </div>
+                        </div>
+
                         <button
-                            onClick={() => setIsModalOpen(true)}
-                            className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white"
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white disabled:opacity-70 disabled:pointer-events-none"
                         >
-                            Book Ride
+                            {isSubmitting ? 'Submitting…' : 'Book Ride'}
                         </button>
-                    </div>
+                    </form>
                 </div>
             </section>
 

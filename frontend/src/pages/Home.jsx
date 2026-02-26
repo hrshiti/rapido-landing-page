@@ -138,7 +138,6 @@ function Home() {
 
         if (result.ok) {
             setSubmitSuccess(true);
-            setIsModalOpen(true);
         } else {
             setSubmitError(result.error || 'Booking request failed. Please try again.');
         }

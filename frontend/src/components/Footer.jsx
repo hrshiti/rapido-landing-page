@@ -63,6 +63,7 @@ const Footer = () => {
                             <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-[#FFBC00] transition-colors text-base">Contact Us</Link></li>
                             <li><Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="hover:text-[#FFBC00] transition-colors text-base">Terms & Conditions</Link></li>
                             <li><Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="hover:text-[#FFBC00] transition-colors text-base">Privacy Policy</Link></li>
+                            <li><Link to="/cancellation-policy" onClick={() => window.scrollTo(0, 0)} className="hover:text-[#FFBC00] transition-colors text-base">Cancellation Policy</Link></li>
                         </ul>
                     </div>
 

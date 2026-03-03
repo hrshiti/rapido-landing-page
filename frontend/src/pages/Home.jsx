@@ -187,58 +187,70 @@ function Home() {
                         )}
 
                         {/* Pickup */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex items-center px-6 py-4 hover:shadow-md transition-shadow">
-                            <div className="text-gray-900 text-xl mr-5 shrink-0">
-                                <div className="w-2 h-2 rounded-full bg-black"></div>
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 flex items-center px-5 py-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                            <div className="text-gray-900 text-xl mr-4 shrink-0">
+                                <div className="w-2.5 h-2.5 rounded-full bg-black"></div>
                             </div>
-                            <input
-                                ref={pickupInputRef}
-                                type="text"
-                                placeholder="Enter Pickup Location"
-                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal bg-transparent"
-                                value={pickupLocation}
-                                onChange={(e) => setPickupLocation(e.target.value)}
-                                autoComplete="off"
-                                aria-label="Pickup location"
-                            />
+                            <div className="flex-1 text-left">
+                                <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Pickup Location</label>
+                                <input
+                                    ref={pickupInputRef}
+                                    type="text"
+                                    placeholder="Enter Pickup Location"
+                                    className="w-full text-lg text-gray-900 outline-none placeholder-gray-400 font-medium bg-transparent"
+                                    value={pickupLocation}
+                                    onChange={(e) => setPickupLocation(e.target.value)}
+                                    autoComplete="off"
+                                    aria-label="Pickup location"
+                                />
+                            </div>
                         </div>
 
                         {/* Drop */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex items-center px-6 py-4 hover:shadow-md transition-shadow">
-                            <div className="text-gray-900 text-xl mr-5 shrink-0">
-                                <div className="w-2 h-2 rounded-full border-2 border-black"></div>
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 flex items-center px-5 py-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                            <div className="text-gray-900 text-xl mr-4 shrink-0">
+                                <div className="w-2.5 h-2.5 rounded-full border-2 border-black"></div>
                             </div>
-                            <input
-                                ref={dropInputRef}
-                                type="text"
-                                placeholder="Enter Drop Location"
-                                className="w-full text-lg text-gray-700 outline-none placeholder-gray-400 font-normal bg-transparent"
-                                value={dropoffLocation}
-                                onChange={(e) => setDropoffLocation(e.target.value)}
-                                autoComplete="off"
-                                aria-label="Drop location"
-                            />
+                            <div className="flex-1 text-left">
+                                <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">Drop Location</label>
+                                <input
+                                    ref={dropInputRef}
+                                    type="text"
+                                    placeholder="Enter Drop Location"
+                                    className="w-full text-lg text-gray-900 outline-none placeholder-gray-400 font-medium bg-transparent"
+                                    value={dropoffLocation}
+                                    onChange={(e) => setDropoffLocation(e.target.value)}
+                                    autoComplete="off"
+                                    aria-label="Drop location"
+                                />
+                            </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
-                                <label htmlFor="pickup-date" className="block text-xs text-gray-500 mb-1">Pickup Date</label>
+                            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                                <label htmlFor="pickup-date" className="flex items-center text-xs font-bold text-gray-500 mb-2 uppercase tracking-tight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-[#FFBC00]"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /></svg>
+                                    Pickup Date
+                                </label>
                                 <input
                                     id="pickup-date"
                                     type="date"
-                                    className="w-full text-gray-700 outline-none font-normal min-h-8"
+                                    className="w-full text-gray-900 bg-transparent outline-none font-medium text-base appearance-none cursor-pointer"
                                     value={pickupDate}
                                     onChange={(e) => setPickupDate(e.target.value)}
                                     min={new Date().toISOString().split('T')[0]}
                                     aria-label="Pickup date"
                                 />
                             </div>
-                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
-                                <label htmlFor="pickup-time" className="block text-xs text-gray-500 mb-1">Pickup Time</label>
+                            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                                <label htmlFor="pickup-time" className="flex items-center text-xs font-bold text-gray-500 mb-2 uppercase tracking-tight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-[#FFBC00]"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                                    Pickup Time
+                                </label>
                                 <input
                                     id="pickup-time"
                                     type="time"
-                                    className="w-full text-gray-700 outline-none font-normal min-h-8"
+                                    className="w-full text-gray-900 bg-transparent outline-none font-medium text-base appearance-none cursor-pointer"
                                     value={pickupTime}
                                     onChange={(e) => setPickupTime(e.target.value)}
                                     aria-label="Pickup time"
@@ -247,25 +259,31 @@ function Home() {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
-                                <label htmlFor="booking-name" className="block text-xs text-gray-500 mb-1">Your Name</label>
+                            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                                <label htmlFor="booking-name" className="flex items-center text-xs font-bold text-gray-500 mb-2 uppercase tracking-tight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-[#FFBC00]"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                                    Your Name
+                                </label>
                                 <input
                                     id="booking-name"
                                     type="text"
-                                    placeholder="Name"
-                                    className="w-full text-gray-700 outline-none placeholder-gray-400 font-normal"
+                                    placeholder="Enter your name"
+                                    className="w-full text-gray-900 bg-transparent outline-none font-medium text-base placeholder-gray-400"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     aria-label="Your name"
                                 />
                             </div>
-                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-3">
-                                <label htmlFor="booking-mobile" className="block text-xs text-gray-500 mb-1">Mobile Number</label>
+                            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 transition-all focus-within:ring-2 focus-within:ring-[#FFBC00] focus-within:border-transparent group">
+                                <label htmlFor="booking-mobile" className="flex items-center text-xs font-bold text-gray-500 mb-2 uppercase tracking-tight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-[#FFBC00]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                                    Mobile Number
+                                </label>
                                 <input
                                     id="booking-mobile"
                                     type="tel"
-                                    placeholder="10-digit mobile"
-                                    className="w-full text-gray-700 outline-none placeholder-gray-400 font-normal"
+                                    placeholder="10-digit mobile number"
+                                    className="w-full text-gray-900 bg-transparent outline-none font-medium text-base placeholder-gray-400"
                                     value={mobileNumber}
                                     onChange={(e) => setMobileNumber(e.target.value)}
                                     maxLength={15}
@@ -277,7 +295,7 @@ function Home() {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full mt-4 py-4 rounded-lg font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white disabled:opacity-70 disabled:pointer-events-none"
+                            className="w-full mt-4 py-4 rounded-xl font-bold text-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-black bg-[#FFBC00] hover:bg-white disabled:opacity-70 disabled:pointer-events-none"
                         >
                             {isSubmitting ? 'Submitting…' : 'Book Ride'}
                         </button>

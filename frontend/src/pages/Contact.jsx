@@ -99,6 +99,15 @@ function Contact() {
                                 </p>
                             </div>
 
+                            <div>
+                                <h3 className="font-bold text-black mb-3 text-lg">Contact Email:</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed">
+                                    <a href="mailto:support@genzoride.com" className="text-[#FFBC00] hover:underline font-medium">
+                                        support@genzoride.com
+                                    </a>
+                                </p>
+                            </div>
+
                             {/* Contact Us Image */}
                             <div className="rounded-3xl overflow-hidden shadow-lg">
                                 <img src={ContactUsImg} alt="Contact Us" className="w-full h-auto object-cover" />

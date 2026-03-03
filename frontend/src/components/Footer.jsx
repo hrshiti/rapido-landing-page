@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="bg-black text-white py-16 border-t border-gray-800">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 text-sm">
 
                     {/* Column 1: Customer App */}
                     <div>
@@ -89,6 +89,17 @@ const Footer = () => {
                                 <svg fill="currentColor" className="w-7 h-7" viewBox="0 0 24 24">
                                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                                 </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Column 5: Contact Us */}
+                    <div>
+                        <h4 className="font-bold mb-4 text-white uppercase tracking-wider text-base">Contact Us</h4>
+                        <div className="flex flex-col gap-2">
+                            <p className="text-gray-400 text-base mb-1">Email:</p>
+                            <a href="mailto:support@genzoride.com" className="hover:text-[#FFBC00] transition-colors text-base break-words">
+                                support@genzoride.com
                             </a>
                         </div>
                     </div>

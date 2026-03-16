@@ -172,7 +172,7 @@ function Home() {
             <section className="relative flex flex-col pt-16 items-center bg-gray-50 overflow-hidden" style={{ minHeight: '80vh' }}>
                 {/* Background Map */}
                 <div className="absolute inset-0 z-0">
-                    <div className="w-full h-full bg-cover bg-center opacity-30" style={{ backgroundImage: 'url("https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg")' }}></div>
+                    <div className="w-full h-full bg-cover bg-center opacity-30" style={{ backgroundImage: 'url("/heroimage.png")' }}></div>
                 </div>
 
                 <div className="relative z-10 w-full max-w-3xl text-center px-4 mt-8">
@@ -334,7 +334,7 @@ function Home() {
                         {services.map((service, index) => (
                             <div key={index} className="flex flex-col items-center group cursor-pointer transition-all hover:-translate-y-1">
                                 <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-50 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-md transition-all p-1 hover:border-[#FFBC00] overflow-hidden">
-                                    <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply transform scale-125" />
+                                    <img src={service.icon} alt={service.name} className="w-full h-full object-contain filter drop-shadow-sm mix-blend-multiply transform" />
                                 </div>
                                 <span className="text-xl font-bold text-gray-900 text-center">{service.name}</span>
                             </div>

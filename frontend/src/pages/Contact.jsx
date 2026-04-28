@@ -1,38 +1,42 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactUsImg from '../assets/Contact Us.jpg';
-import emailjs from '@emailjs/browser';
+import { submitContactForm } from '../services/webbookingApi';
 
 function Contact() {
-    const form = useRef();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
+    const [role, setRole] = useState('');
+    const [message, setMessage] = useState('');
 
-    const sendEmail = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        const result = await submitContactForm({
+            name,
+            email,
+            mobile,
+            role,
+            message,
+        });
 
-        if (!serviceId || !templateId || !publicKey || serviceId === 'your_emailjs_service_id') {
-            alert("EmailJS configuration is missing! Please check emailjs_setup_guide.html and update your .env file.");
+        if (!result.ok) {
+            alert(result.error || 'Failed to send message. Please try again later.');
             setIsSubmitting(false);
             return;
         }
 
-        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-            .then((result) => {
-                console.log('Email successfully sent!', result.text);
-                alert("Thank you! Your message has been sent to support@genzoride.com.");
-                form.current.reset();
-                setIsSubmitting(false);
-            }, (error) => {
-                console.error('Failed to send email:', error.text);
-                alert("Failed to send message. Please try again later.");
-                setIsSubmitting(false);
-            });
+        alert('Thank you! Your message has been sent to support@genzoride.com.');
+        setName('');
+        setEmail('');
+        setMobile('');
+        setRole('');
+        setMessage('');
+        setIsSubmitting(false);
     };
 
     return (
@@ -48,27 +52,27 @@ function Contact() {
                 <div className="flex flex-col lg:flex-row gap-10 md:gap-20">
                     {/* Left Column: Form */}
                     <div className="flex-1">
-                        <form ref={form} className="space-y-6" onSubmit={sendEmail}>
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Name <span className="text-[#FF8C00]">*</span></label>
-                                <input type="text" name="name" required placeholder="Enter your name" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="text" name="name" required value={name} placeholder="Enter your name" onChange={(e) => setName(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Email Address <span className="text-[#FF8C00]">*</span></label>
-                                <input type="email" name="email" required placeholder="Enter your email" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="email" name="email" required value={email} placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Mobile Number <span className="text-[#FF8C00]">*</span></label>
-                                <input type="tel" name="mobile" required placeholder="Enter your mobile number" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
+                                <input type="tel" name="mobile" required value={mobile} placeholder="Enter your mobile number" onChange={(e) => setMobile(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400" />
                             </div>
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">You are a <span className="text-[#FF8C00]">*</span></label>
                                 <div className="relative">
-                                    <select name="role" required className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 appearance-none text-sm">
-                                        <option value="" disabled selected>--select--</option>
+                                    <select name="role" required value={role} onChange={(e) => setRole(e.target.value)} className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 appearance-none text-sm">
+                                        <option value="" disabled>--select--</option>
                                         <option value="Customer">Customer</option>
                                         <option value="Pilot">Pilot</option>
                                     </select>
@@ -80,7 +84,7 @@ function Contact() {
 
                             <div>
                                 <label className="block text-gray-700 text-sm font-medium mb-2">Comment <span className="text-[#FF8C00]">*</span></label>
-                                <textarea name="message" required rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
+                                <textarea name="message" value={message} onChange={(e) => setMessage(e.target.value)} required rows="4" placeholder="Enter your comment" className="w-full px-4 py-3 border border-gray-200 rounded text-gray-700 focus:outline-none focus:border-[#FFE755] bg-gray-50 text-sm placeholder-gray-400 resize-none"></textarea>
                             </div>
 
                             <button type="submit" disabled={isSubmitting} className={`w-full py-3 rounded font-bold text-black bg-[#FFBC00] transition-colors border border-transparent shadow-md ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-white hover:border-black'}`}>
